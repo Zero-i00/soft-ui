@@ -21,10 +21,14 @@ pnpm-debug.log*
 
 # editor / os
 .DS_Store
-.idea
+**/.idea/
 .vscode/*
 !.vscode/settings.json
 !.vscode/extensions.json
 
 # tests
 coverage
+
+# local claude config
+.claude
+docs/superpowers
