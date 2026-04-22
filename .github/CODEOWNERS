@@ -1,0 +1,6 @@
+# Global owner — reviews all PRs by default
+* @Zero-i00
+
+# Published packages — require explicit owner approval
+packages/primitives/ @Zero-i00
+packages/cli/ @Zero-i00

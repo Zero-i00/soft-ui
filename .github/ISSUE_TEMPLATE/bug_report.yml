@@ -1,0 +1,67 @@
+name: Bug report
+description: Report a bug in a component, primitive, or CLI command
+labels: ["type:bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. Please fill in as much detail as possible.
+
+  - type: input
+    id: version
+    attributes:
+      label: Package version
+      description: Output of `npm list @soft-stack/primitives` or CLI version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: package
+    attributes:
+      label: Affected package
+      options:
+        - "@soft-stack/primitives"
+        - CLI
+        - Registry / component source
+        - Docs site
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened? What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Install @soft-stack/primitives
+        2. Use <Slot> with ...
+        3. See error
+    validations:
+      required: true
+
+  - type: input
+    id: reproduction-link
+    attributes:
+      label: Minimal reproduction
+      description: Link to a CodeSandbox, StackBlitz, or GitHub repo
+      placeholder: https://codesandbox.io/...
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: |
+        - OS: Ubuntu 24.04
+        - Node: 20.11.0
+        - Package manager: pnpm 9.12.0
+        - Framework: Next.js 15
+    validations:
+      required: true
