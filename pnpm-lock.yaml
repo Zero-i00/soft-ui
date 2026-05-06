@@ -102,9 +102,15 @@ importers:
 
   packages/registry:
     devDependencies:
+      '@types/react':
+        specifier: ^18.3.0
+        version: 18.3.28
       glob:
         specifier: ^11.0.0
         version: 11.1.0
+      react:
+        specifier: ^18.3.0
+        version: 18.3.1
       tsx:
         specifier: ^4.19.0
         version: 4.21.0
