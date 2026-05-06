@@ -1,0 +1,110 @@
+/* ═══════════════════════════════════════════════════
+   Neutral: linen  (слоновая кость · бирюза)
+   Surfaces, fills, text, borders, shadows.
+   ═══════════════════════════════════════════════════ */
+
+:root {
+	color-scheme: light;
+
+	/* ── Surfaces ────────────────────────────────── */
+	--surface-body: #f8f5f2;
+	--surface-card: #ffffff;
+	--surface-popover: #ffffff;
+	--surface-inset: #ede8e2;
+	--surface-inverse: #1a1714;
+	--surface-hover: color-mix(in srgb, var(--text-primary) 5%, var(--surface-body));
+	--surface-active: color-mix(in srgb, var(--text-primary) 10%, var(--surface-body));
+	--surface-selected: #07808014;
+	--surface-disabled: #ede8e2;
+
+	/* ── Fills ───────────────────────────────────── */
+	--fill-soft: #ede8e2;
+	--fill-soft-hover: color-mix(in srgb, var(--text-primary) 6%, var(--fill-soft));
+	--fill-strong: #e2dbd4;
+	--fill-strong-hover: color-mix(in srgb, var(--text-primary) 12%, var(--fill-strong));
+
+	/* ── Text ────────────────────────────────────── */
+	--text-primary: #232323;
+	--text-secondary: #6a6460;
+	--text-disabled: #6a646080;
+	--text-inverse: #f2efec;
+	--text-link: #078080;
+	--text-placeholder: #6a6460;
+
+	/* ── Icons ───────────────────────────────────── */
+	--icon-default: #232323;
+	--icon-soft: #6a6460;
+
+	/* ── Borders ─────────────────────────────────── */
+	--border-default: #e2dbd4;
+	--border-strong: color-mix(in srgb, var(--text-primary) 15%, var(--border-default));
+	--separator: #e2dbd480;
+
+	/* ── Neutral opacity ─────────────────────────── */
+	--neutral-opacity-lighter: #2323230a;
+	--neutral-opacity-light: #23232314;
+	--neutral-opacity-main: #2323231f;
+	--neutral-opacity-dark: #23232333;
+	--neutral-opacity-darker: #2323234d;
+
+	/* ── Overlay & Shadow ────────────────────────── */
+	--color-overlay: rgb(0 0 0 / 0.5);
+	--color-shadow-xs: rgb(0 0 0 / 0.04);
+	--color-shadow-sm: rgb(0 0 0 / 0.06);
+	--color-shadow-md: rgb(0 0 0 / 0.12);
+	--color-shadow-lg: rgb(0 0 0 / 0.2);
+	--color-shadow-xl: rgb(0 0 0 / 0.3);
+}
+
+[data-theme="dark"] {
+	color-scheme: dark;
+
+	/* ── Surfaces ────────────────────────────────── */
+	--surface-body: #1a1714;
+	--surface-card: #252220;
+	--surface-popover: #252220;
+	--surface-inset: #2e2b28;
+	--surface-inverse: #f8f5f2;
+	--surface-hover: color-mix(in srgb, var(--text-primary) 5%, var(--surface-body));
+	--surface-active: color-mix(in srgb, var(--text-primary) 10%, var(--surface-body));
+	--surface-selected: #4aabab14;
+	--surface-disabled: #2e2b28;
+
+	/* ── Fills ───────────────────────────────────── */
+	--fill-soft: #2e2b28;
+	--fill-soft-hover: color-mix(in srgb, var(--text-primary) 6%, var(--fill-soft));
+	--fill-strong: #302c28;
+	--fill-strong-hover: color-mix(in srgb, var(--text-primary) 12%, var(--fill-strong));
+
+	/* ── Text ────────────────────────────────────── */
+	--text-primary: #f2efec;
+	--text-secondary: #989490;
+	--text-disabled: #98949080;
+	--text-inverse: #232323;
+	--text-link: #4aabab;
+	--text-placeholder: #989490;
+
+	/* ── Icons ───────────────────────────────────── */
+	--icon-default: #f2efec;
+	--icon-soft: #989490;
+
+	/* ── Borders ─────────────────────────────────── */
+	--border-default: #302c28;
+	--border-strong: color-mix(in srgb, var(--text-primary) 15%, var(--border-default));
+	--separator: #302c2880;
+
+	/* ── Neutral opacity ─────────────────────────── */
+	--neutral-opacity-lighter: #f2efec0a;
+	--neutral-opacity-light: #f2efec14;
+	--neutral-opacity-main: #f2efec1f;
+	--neutral-opacity-dark: #f2efec33;
+	--neutral-opacity-darker: #f2efec4d;
+
+	/* ── Overlay & Shadow ────────────────────────── */
+	--color-overlay: rgb(0 0 0 / 0.65);
+	--color-shadow-xs: rgb(0 0 0 / 0.08);
+	--color-shadow-sm: rgb(0 0 0 / 0.14);
+	--color-shadow-md: rgb(0 0 0 / 0.25);
+	--color-shadow-lg: rgb(0 0 0 / 0.4);
+	--color-shadow-xl: rgb(0 0 0 / 0.55);
+}

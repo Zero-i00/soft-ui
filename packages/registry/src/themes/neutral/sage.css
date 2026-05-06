@@ -1,0 +1,110 @@
+/* ═══════════════════════════════════════════════════
+   Neutral: sage  (зелёный туман · лесной)
+   Surfaces, fills, text, borders, shadows.
+   ═══════════════════════════════════════════════════ */
+
+:root {
+	color-scheme: light;
+
+	/* ── Surfaces ────────────────────────────────── */
+	--surface-body: #f2f7f5;
+	--surface-card: #edf7f2;
+	--surface-popover: #edf7f2;
+	--surface-inset: #ddf0e6;
+	--surface-inverse: #111210;
+	--surface-hover: color-mix(in srgb, var(--text-primary) 5%, var(--surface-body));
+	--surface-active: color-mix(in srgb, var(--text-primary) 10%, var(--surface-body));
+	--surface-selected: #2a6a5514;
+	--surface-disabled: #ddf0e6;
+
+	/* ── Fills ───────────────────────────────────── */
+	--fill-soft: #ddf0e6;
+	--fill-soft-hover: color-mix(in srgb, var(--text-primary) 6%, var(--fill-soft));
+	--fill-strong: #c0ddd2;
+	--fill-strong-hover: color-mix(in srgb, var(--text-primary) 12%, var(--fill-strong));
+
+	/* ── Text ────────────────────────────────────── */
+	--text-primary: #00473e;
+	--text-secondary: #3a6a60;
+	--text-disabled: #3a6a6080;
+	--text-inverse: #e4e0d8;
+	--text-link: #2a6a55;
+	--text-placeholder: #3a6a60;
+
+	/* ── Icons ───────────────────────────────────── */
+	--icon-default: #00473e;
+	--icon-soft: #3a6a60;
+
+	/* ── Borders ─────────────────────────────────── */
+	--border-default: #c0ddd2;
+	--border-strong: color-mix(in srgb, var(--text-primary) 15%, var(--border-default));
+	--separator: #c0ddd280;
+
+	/* ── Neutral opacity ─────────────────────────── */
+	--neutral-opacity-lighter: #00473e0a;
+	--neutral-opacity-light: #00473e14;
+	--neutral-opacity-main: #00473e1f;
+	--neutral-opacity-dark: #00473e33;
+	--neutral-opacity-darker: #00473e4d;
+
+	/* ── Overlay & Shadow ────────────────────────── */
+	--color-overlay: rgb(0 0 0 / 0.5);
+	--color-shadow-xs: rgb(0 0 0 / 0.04);
+	--color-shadow-sm: rgb(0 0 0 / 0.06);
+	--color-shadow-md: rgb(0 0 0 / 0.12);
+	--color-shadow-lg: rgb(0 0 0 / 0.2);
+	--color-shadow-xl: rgb(0 0 0 / 0.3);
+}
+
+[data-theme="dark"] {
+	color-scheme: dark;
+
+	/* ── Surfaces ────────────────────────────────── */
+	--surface-body: #111210;
+	--surface-card: #1a1917;
+	--surface-popover: #1a1917;
+	--surface-inset: #212220;
+	--surface-inverse: #f2f7f5;
+	--surface-hover: color-mix(in srgb, var(--text-primary) 5%, var(--surface-body));
+	--surface-active: color-mix(in srgb, var(--text-primary) 10%, var(--surface-body));
+	--surface-selected: #5a8a6a14;
+	--surface-disabled: #212220;
+
+	/* ── Fills ───────────────────────────────────── */
+	--fill-soft: #212220;
+	--fill-soft-hover: color-mix(in srgb, var(--text-primary) 6%, var(--fill-soft));
+	--fill-strong: #272420;
+	--fill-strong-hover: color-mix(in srgb, var(--text-primary) 12%, var(--fill-strong));
+
+	/* ── Text ────────────────────────────────────── */
+	--text-primary: #e4e0d8;
+	--text-secondary: #8a9288;
+	--text-disabled: #8a928880;
+	--text-inverse: #00473e;
+	--text-link: #5a8a6a;
+	--text-placeholder: #8a9288;
+
+	/* ── Icons ───────────────────────────────────── */
+	--icon-default: #e4e0d8;
+	--icon-soft: #8a9288;
+
+	/* ── Borders ─────────────────────────────────── */
+	--border-default: #272420;
+	--border-strong: color-mix(in srgb, var(--text-primary) 15%, var(--border-default));
+	--separator: #27242080;
+
+	/* ── Neutral opacity ─────────────────────────── */
+	--neutral-opacity-lighter: #e4e0d80a;
+	--neutral-opacity-light: #e4e0d814;
+	--neutral-opacity-main: #e4e0d81f;
+	--neutral-opacity-dark: #e4e0d833;
+	--neutral-opacity-darker: #e4e0d84d;
+
+	/* ── Overlay & Shadow ────────────────────────── */
+	--color-overlay: rgb(0 0 0 / 0.65);
+	--color-shadow-xs: rgb(0 0 0 / 0.08);
+	--color-shadow-sm: rgb(0 0 0 / 0.14);
+	--color-shadow-md: rgb(0 0 0 / 0.25);
+	--color-shadow-lg: rgb(0 0 0 / 0.4);
+	--color-shadow-xl: rgb(0 0 0 / 0.55);
+}

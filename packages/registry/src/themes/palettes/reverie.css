@@ -1,0 +1,133 @@
+/* ═══════════════════════════════════════════════════
+   Палитра: reverie
+   Primary-500: #d45a8a  (пыльный розовый)
+   Семантические цвета стабильны в light/dark — dark-блок отсутствует.
+   ═══════════════════════════════════════════════════ */
+
+:root {
+	/* ── Primary ─────────────────────────────────── */
+	--color-primary-100: hsl(336, 15%, 95%);
+	--color-primary-200: hsl(336, 22%, 89%);
+	--color-primary-300: hsl(336, 32%, 81%);
+	--color-primary-400: hsl(336, 44%, 72%);
+	--color-primary-500: #d45a8a;
+	--color-primary-600: hsl(336, 62%, 48%);
+	--color-primary-700: hsl(336, 64%, 39%);
+	--color-primary-800: hsl(336, 65%, 31%);
+	--color-primary-900: hsl(336, 65%, 24%);
+
+	--color-primary-opacity-lighter: #d45a8a14;
+	--color-primary-opacity-light: #d45a8a29;
+	--color-primary-opacity-main: #d45a8a3d;
+	--color-primary-opacity-dark: #d45a8a52;
+	--color-primary-opacity-darker: #d45a8a61;
+
+	--color-primary-shadow-sm: #d45a8a4d;
+	--color-primary-shadow-md: #d45a8a73;
+	--color-primary-shadow-lg: #d45a8a66;
+
+	/* ── Secondary ───────────────────────────────── */
+	--color-secondary-100: #e8e8e9;
+	--color-secondary-200: #d0d1d4;
+	--color-secondary-300: #b9bbbe;
+	--color-secondary-400: #a1a4a9;
+	--color-secondary-500: #8a8d93;
+	--color-secondary-600: #7c7f84;
+	--color-secondary-700: #75787d;
+	--color-secondary-800: #6e7176;
+	--color-secondary-900: #686a6e;
+
+	--color-secondary-opacity-lighter: #8a8d9314;
+	--color-secondary-opacity-light: #8a8d9329;
+	--color-secondary-opacity-main: #8a8d933d;
+	--color-secondary-opacity-dark: #8a8d9352;
+	--color-secondary-opacity-darker: #8a8d9361;
+
+	--color-secondary-shadow-sm: #8a8d934d;
+	--color-secondary-shadow-md: #8a8d9373;
+	--color-secondary-shadow-lg: #8a8d9366;
+
+	/* ── Info ─────────────────────────────────────── */
+	--color-info-100: #d0efff;
+	--color-info-200: #a2e0ff;
+	--color-info-300: #73d0ff;
+	--color-info-400: #45c1ff;
+	--color-info-500: #16b1ff;
+	--color-info-600: #149fe6;
+	--color-info-700: #1396d9;
+	--color-info-800: #128ecc;
+	--color-info-900: #1085bf;
+
+	--color-info-opacity-lighter: #16b1ff14;
+	--color-info-opacity-light: #16b1ff29;
+	--color-info-opacity-main: #16b1ff3d;
+	--color-info-opacity-dark: #16b1ff52;
+	--color-info-opacity-darker: #16b1ff61;
+
+	--color-info-shadow-sm: #16b1ff4d;
+	--color-info-shadow-md: #16b1ff73;
+	--color-info-shadow-lg: #16b1ff66;
+
+	/* ── Success ─────────────────────────────────── */
+	--color-success-100: #ddf4cc;
+	--color-success-200: #bbea99;
+	--color-success-300: #9adf66;
+	--color-success-400: #78d533;
+	--color-success-500: #56ca00;
+	--color-success-600: #4db600;
+	--color-success-700: #49ac00;
+	--color-success-800: #45a200;
+	--color-success-900: #419800;
+
+	--color-success-opacity-lighter: #56ca0014;
+	--color-success-opacity-light: #56ca0029;
+	--color-success-opacity-main: #56ca003d;
+	--color-success-opacity-dark: #56ca0052;
+	--color-success-opacity-darker: #56ca0061;
+
+	--color-success-shadow-sm: #56ca004d;
+	--color-success-shadow-md: #56ca0073;
+	--color-success-shadow-lg: #56ca0066;
+
+	/* ── Warning ─────────────────────────────────── */
+	--color-warning-100: #fff0cc;
+	--color-warning-200: #ffe199;
+	--color-warning-300: #ffd266;
+	--color-warning-400: #ffc333;
+	--color-warning-500: #ffb400;
+	--color-warning-600: #e6a200;
+	--color-warning-700: #d99900;
+	--color-warning-800: #cc9000;
+	--color-warning-900: #bf8700;
+
+	--color-warning-opacity-lighter: #ffb40014;
+	--color-warning-opacity-light: #ffb40029;
+	--color-warning-opacity-main: #ffb4003d;
+	--color-warning-opacity-dark: #ffb40052;
+	--color-warning-opacity-darker: #ffb40061;
+
+	--color-warning-shadow-sm: #ffb4004d;
+	--color-warning-shadow-md: #ffb40073;
+	--color-warning-shadow-lg: #ffb40066;
+
+	/* ── Error ───────────────────────────────────── */
+	--color-error-100: #ffdbdc;
+	--color-error-200: #ffb7b9;
+	--color-error-300: #ff9497;
+	--color-error-400: #ff7074;
+	--color-error-500: #ff4c51;
+	--color-error-600: #e64449;
+	--color-error-700: #d94145;
+	--color-error-800: #cc3d41;
+	--color-error-900: #bf393d;
+
+	--color-error-opacity-lighter: #ff4c5114;
+	--color-error-opacity-light: #ff4c5129;
+	--color-error-opacity-main: #ff4c513d;
+	--color-error-opacity-dark: #ff4c5152;
+	--color-error-opacity-darker: #ff4c5161;
+
+	--color-error-shadow-sm: #ff4c514d;
+	--color-error-shadow-md: #ff4c5173;
+	--color-error-shadow-lg: #ff4c5166;
+}

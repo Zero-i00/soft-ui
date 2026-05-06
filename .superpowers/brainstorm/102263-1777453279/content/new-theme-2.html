@@ -1,0 +1,188 @@
+<style>
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.tc { border-radius: 12px; overflow: hidden; cursor: pointer; border: 2.5px solid transparent; transition: border-color .15s, box-shadow .15s; background: #fff; box-shadow: 0 1px 5px rgba(0,0,0,.09); }
+.tc:hover { border-color: #94a3b8; }
+.tc.selected { border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,.14); }
+.ms { display: grid; grid-template-columns: 1fr 1fr; height: 120px; }
+.mp { padding: 9px 9px 6px; display: flex; flex-direction: column; }
+.mlabel { font-size: 6px; letter-spacing: .06em; text-transform: uppercase; opacity: .35; margin-bottom: 4px; font-family: system-ui; }
+.mnav { height: 19px; border-radius: 4px; margin-bottom: 6px; display: flex; align-items: center; gap: 3px; padding: 0 7px; flex-shrink: 0; }
+.mcard { border-radius: 6px; padding: 7px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+.mdot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+.mh { font-size: 9px; font-weight: 700; line-height: 1.2; }
+.msub { font-size: 7px; opacity: .55; margin-top: 1px; }
+.mbtn { display: inline-flex; align-items: center; height: 15px; border-radius: 3px; padding: 0 8px; font-size: 7.5px; font-weight: 700; border: none; width: fit-content; }
+.ti { padding: 9px 12px 11px; border-top: 1px solid #f0f0f0; }
+.tn { font-weight: 700; font-size: 13px; color: #0f172a; }
+.td { font-size: 10.5px; color: #64748b; margin-top: 2px; line-height: 1.45; }
+.hhr { font-size: 9px; color: #b0bac8; margin-top: 2px; }
+.sw { display: flex; gap: 3px; margin-top: 6px; }
+.sw span { display: inline-block; width: 14px; height: 14px; border-radius: 50%; }
+</style>
+
+<h2>Ещё 4 варианта</h2>
+<p class="subtitle" style="margin-bottom: 20px">Принципиально другие — максимально непохожи на первые 4 и на текущие 9 тем.</p>
+
+<div class="grid2">
+
+  <!-- Bloom: розовый bg, тёмно-синий акцент -->
+  <div class="tc" data-choice="bloom" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#fde8f0">
+        <div class="mlabel" style="color:#0e172c">☀ Light</div>
+        <div class="mnav" style="background:#fff4f8;border:1px solid #f4c8dc">
+          <div class="mdot" style="background:#0e172c"></div>
+          <span style="font-size:7px;font-weight:600;color:#0e172c">App</span>
+        </div>
+        <div class="mcard" style="background:#fff4f8;border:1px solid #f4c8dc">
+          <div><div class="mh" style="color:#0e172c">Заголовок</div><div class="msub" style="color:#2e3a5a">Текст</div></div>
+          <div class="mbtn" style="background:#0e172c;color:#fde8f0">Кнопка</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#0e172c">
+        <div class="mlabel" style="color:#b0a8c8">🌙 Dark</div>
+        <div class="mnav" style="background:#182040;border:1px solid #202c48">
+          <div class="mdot" style="background:#f08098"></div>
+          <span style="font-size:7px;font-weight:600;color:#fde8f0">App</span>
+        </div>
+        <div class="mcard" style="background:#182040;border:1px solid #202c48">
+          <div><div class="mh" style="color:#fde8f0">Заголовок</div><div class="msub" style="color:#b0a8c8">Текст</div></div>
+          <div class="mbtn" style="background:#f08098;color:#0e172c">Кнопка</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Bloom</div>
+      <div class="td">Розовый фон · тёмно-синий акцент. В тёмной теме всё инвертируется: фон становится синим, текст — розовым.</div>
+      <div class="hhr">Happyhues #7</div>
+      <div class="sw">
+        <span style="background:#fde8f0;border:1px solid #f4c8dc"></span>
+        <span style="background:#0e172c"></span>
+        <span style="background:#f08098"></span>
+        <span style="background:#182040"></span>
+        <span style="background:#fde8f0;border:1px solid #f4c8dc"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cocoa: шоколадно-тёплый тёмный -->
+  <div class="tc" data-choice="cocoa" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#f7ede8">
+        <div class="mlabel" style="color:#2d1c16">☀ Light</div>
+        <div class="mnav" style="background:#ffffff;border:1px solid #e8d4cc">
+          <div class="mdot" style="background:#9a6054"></div>
+          <span style="font-size:7px;font-weight:600;color:#2d1c16">App</span>
+        </div>
+        <div class="mcard" style="background:#ffffff;border:1px solid #e8d4cc">
+          <div><div class="mh" style="color:#2d1c16">Заголовок</div><div class="msub" style="color:#7a5a50">Текст</div></div>
+          <div class="mbtn" style="background:#9a6054;color:#fff">Кнопка</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#55423d">
+        <div class="mlabel" style="color:#ddc0b0">🌙 Dark</div>
+        <div class="mnav" style="background:#6a5248;border:1px solid #7a6258">
+          <div class="mdot" style="background:#ffb09a"></div>
+          <span style="font-size:7px;font-weight:600;color:#fff3ec">App</span>
+        </div>
+        <div class="mcard" style="background:#6a5248;border:1px solid #7a6258">
+          <div><div class="mh" style="color:#fff3ec">Заголовок</div><div class="msub" style="color:#ddc0b0">Текст</div></div>
+          <div class="mbtn" style="background:#ffb09a;color:#2d1c16">Кнопка</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Cocoa</div>
+      <div class="td">Тёплый шоколад · персиковый акцент. Единственная тёмная тема с по-настоящему коричневым фоном.</div>
+      <div class="hhr">Happyhues #16</div>
+      <div class="sw">
+        <span style="background:#f7ede8;border:1px solid #e8d4cc"></span>
+        <span style="background:#9a6054"></span>
+        <span style="background:#55423d"></span>
+        <span style="background:#6a5248"></span>
+        <span style="background:#ffb09a"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slate: технологичный серо-голубой -->
+  <div class="tc" data-choice="slate" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#f2f5f8">
+        <div class="mlabel" style="color:#1a2a3a">☀ Light</div>
+        <div class="mnav" style="background:#ffffff;border:1px solid #c8d8e8">
+          <div class="mdot" style="background:#1a80d0"></div>
+          <span style="font-size:7px;font-weight:600;color:#1a2a3a">App</span>
+        </div>
+        <div class="mcard" style="background:#ffffff;border:1px solid #c8d8e8">
+          <div><div class="mh" style="color:#1a2a3a">Заголовок</div><div class="msub" style="color:#4a6070">Текст</div></div>
+          <div class="mbtn" style="background:#1a80d0;color:#fff">Кнопка</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#0c1a28">
+        <div class="mlabel" style="color:#6888a0">🌙 Dark</div>
+        <div class="mnav" style="background:#162438;border:1px solid #1e3048">
+          <div class="mdot" style="background:#3090d8"></div>
+          <span style="font-size:7px;font-weight:600;color:#d8eeff">App</span>
+        </div>
+        <div class="mcard" style="background:#162438;border:1px solid #1e3048">
+          <div><div class="mh" style="color:#d8eeff">Заголовок</div><div class="msub" style="color:#6888a0">Текст</div></div>
+          <div class="mbtn" style="background:#3090d8;color:#0c1a28">Кнопка</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Slate</div>
+      <div class="td">Холодный серо-синий · яркий синий акцент. Технологично и нейтрально — идеально для B2B / дашбордов.</div>
+      <div class="hhr">Custom</div>
+      <div class="sw">
+        <span style="background:#f2f5f8;border:1px solid #c8d8e8"></span>
+        <span style="background:#1a80d0"></span>
+        <span style="background:#1a2a3a"></span>
+        <span style="background:#162438"></span>
+        <span style="background:#3090d8"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Amethyst: глубокий фиолетовый -->
+  <div class="tc" data-choice="amethyst" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#f5f0ff">
+        <div class="mlabel" style="color:#20104a">☀ Light</div>
+        <div class="mnav" style="background:#ffffff;border:1px solid #d8c8f4">
+          <div class="mdot" style="background:#6b2cc4"></div>
+          <span style="font-size:7px;font-weight:600;color:#20104a">App</span>
+        </div>
+        <div class="mcard" style="background:#ffffff;border:1px solid #d8c8f4">
+          <div><div class="mh" style="color:#20104a">Заголовок</div><div class="msub" style="color:#5a4090">Текст</div></div>
+          <div class="mbtn" style="background:#6b2cc4;color:#fff">Кнопка</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#180830">
+        <div class="mlabel" style="color:#9878c8">🌙 Dark</div>
+        <div class="mnav" style="background:#241040;border:1px solid #301858">
+          <div class="mdot" style="background:#9050d8"></div>
+          <span style="font-size:7px;font-weight:600;color:#ede0ff">App</span>
+        </div>
+        <div class="mcard" style="background:#241040;border:1px solid #301858">
+          <div><div class="mh" style="color:#ede0ff">Заголовок</div><div class="msub" style="color:#9878c8">Текст</div></div>
+          <div class="mbtn" style="background:#9050d8;color:#180830">Кнопка</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Amethyst</div>
+      <div class="td">Насыщенный фиолет · глубокий тёмный. В отличие от Void (мягкий/серый), здесь полноценный фиолетовый характер.</div>
+      <div class="hhr">Custom</div>
+      <div class="sw">
+        <span style="background:#f5f0ff;border:1px solid #d8c8f4"></span>
+        <span style="background:#6b2cc4"></span>
+        <span style="background:#20104a"></span>
+        <span style="background:#241040"></span>
+        <span style="background:#9050d8"></span>
+      </div>
+    </div>
+  </div>
+
+</div>

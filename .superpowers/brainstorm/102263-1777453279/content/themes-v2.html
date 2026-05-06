@@ -1,0 +1,422 @@
+<style>
+.section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #94a3b8; margin: 0 0 12px; }
+.grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; margin-bottom: 24px; }
+.tc { border-radius: 12px; overflow: hidden; cursor: pointer; border: 2.5px solid transparent; transition: border-color .15s, box-shadow .15s; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,.09); }
+.tc:hover { border-color: #94a3b8; }
+.tc.selected { border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,.14); }
+/* mini preview */
+.ms { display: grid; grid-template-columns: 1fr 1fr; height: 100px; }
+.mp { padding: 7px 7px 4px; display: flex; flex-direction: column; gap: 0; }
+.mlabel { font-size: 6px; letter-spacing: .06em; text-transform: uppercase; opacity: .45; font-family: system-ui; margin-bottom: 4px; }
+.mnav { height: 17px; border-radius: 4px; margin-bottom: 5px; display: flex; align-items: center; gap: 3px; padding: 0 6px; flex-shrink: 0; }
+.mcard { border-radius: 5px; padding: 5px 6px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+.mdot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+.mh { font-size: 8px; font-weight: 700; line-height: 1.2; }
+.msub { font-size: 6.5px; opacity: .55; margin-top: 1px; }
+.mbtn { display: inline-flex; align-items: center; height: 14px; border-radius: 3px; padding: 0 7px; font-size: 7px; font-weight: 700; border: none; width: fit-content; flex-shrink: 0; }
+/* info strip */
+.ti { padding: 7px 10px 9px; border-top: 1px solid #f0f0f0; }
+.tn { font-weight: 700; font-size: 12.5px; color: #0f172a; }
+.td { font-size: 10px; color: #64748b; margin-top: 2px; line-height: 1.4; }
+.hhr { font-size: 9px; color: #b0bac8; margin-top: 1px; }
+.sw { display: flex; gap: 3px; margin-top: 6px; }
+.sw span { display: inline-block; width: 12px; height: 12px; border-radius: 50%; }
+
+/* radius section */
+.radius-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.rc { border-radius: 12px; overflow: hidden; cursor: pointer; border: 2.5px solid transparent; transition: border-color .15s, box-shadow .15s; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,.08); padding: 16px; }
+.rc:hover { border-color: #94a3b8; }
+.rc.selected { border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,.14); }
+.rpreview { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; }
+.rbtn { height: 28px; padding: 0 14px; font-size: 11px; font-weight: 600; background: #3b82f6; color: #fff; border: none; cursor: default; }
+.rtag { height: 20px; padding: 0 9px; font-size: 10px; font-weight: 500; background: #eff6ff; color: #3b82f6; border: 1px solid #bfdbfe; cursor: default; display: inline-flex; align-items: center; }
+.rinput { height: 28px; padding: 0 10px; font-size: 11px; border: 1.5px solid #cbd5e1; color: #374151; background: #fff; width: 90px; outline: none; }
+.rcard { height: 28px; padding: 0 12px; background: #f8fafc; border: 1px solid #e2e8f0; font-size: 10px; color: #64748b; display: flex; align-items: center; }
+.rn { font-weight: 700; font-size: 13px; color: #0f172a; margin-bottom: 3px; }
+.rd { font-size: 11px; color: #64748b; }
+.rv { font-size: 10px; color: #b0bac8; margin-top: 3px; font-family: monospace; }
+
+hr.sep { border: none; border-top: 1px solid #e8edf2; margin: 28px 0 20px; }
+</style>
+
+<h2>8 тем — Happyhues + Soft</h2>
+<p class="subtitle">Тёмные режимы приглушены: акценты десатурированы, фоны почти чёрные, без кислотных тонов.</p>
+<p class="subtitle" style="margin-bottom: 20px">Выберите нужные (мультиселект). После — покажу радиус, отступы и типографику.</p>
+
+<div class="section-title">Тёплые / нейтральные</div>
+<div class="grid4">
+
+  <!-- 1. Soft (claude.ai) -->
+  <div class="tc selected" data-choice="soft" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#faf7f4">
+        <div class="mlabel" style="color:#1c1917">☀ Light</div>
+        <div class="mnav" style="background:#ffffff;border:1px solid #e7e0d6">
+          <div class="mdot" style="background:#d97706"></div>
+          <span style="font-size:7px;font-weight:600;color:#1c1917">App</span>
+        </div>
+        <div class="mcard" style="background:#ffffff;border:1px solid #e7e0d6">
+          <div><div class="mh" style="color:#1c1917">Заголовок</div><div class="msub" style="color:#78716c">Параграф текста</div></div>
+          <div class="mbtn" style="background:#1c1917;color:#faf7f4">Кнопка</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#1c1917">
+        <div class="mlabel" style="color:#a8a29e">🌙 Dark</div>
+        <div class="mnav" style="background:#292524;border:1px solid #44403c">
+          <div class="mdot" style="background:#b45309"></div>
+          <span style="font-size:7px;font-weight:600;color:#f5f0ea">App</span>
+        </div>
+        <div class="mcard" style="background:#292524;border:1px solid #44403c">
+          <div><div class="mh" style="color:#f5f0ea">Заголовок</div><div class="msub" style="color:#a8a29e">Параграф текста</div></div>
+          <div class="mbtn" style="background:#b45309;color:#faf7f4">Кнопка</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Soft</div>
+      <div class="td">Тёплый крем · янтарный акцент</div>
+      <div class="hhr">Как claude.ai</div>
+      <div class="sw">
+        <span style="background:#faf7f4;border:1px solid #e0d5c8"></span>
+        <span style="background:#d97706"></span>
+        <span style="background:#1c1917"></span>
+        <span style="background:#292524"></span>
+        <span style="background:#b45309"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Parchment (hh#11: #f9f4ef bg, earthy brown) -->
+  <div class="tc selected" data-choice="parchment" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#f9f4ef">
+        <div class="mlabel" style="color:#020826">☀ Light</div>
+        <div class="mnav" style="background:#ffffff;border:1px solid #e4d8c8">
+          <div class="mdot" style="background:#8c7851"></div>
+          <span style="font-size:7px;font-weight:600;color:#020826">App</span>
+        </div>
+        <div class="mcard" style="background:#ffffff;border:1px solid #e4d8c8">
+          <div><div class="mh" style="color:#020826">Заголовок</div><div class="msub" style="color:#716040">Параграф текста</div></div>
+          <div class="mbtn" style="background:#8c7851;color:#ffffff">Кнопка</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#140e08">
+        <div class="mlabel" style="color:#9a8870">🌙 Dark</div>
+        <div class="mnav" style="background:#1e1610;border:1px solid #2e2418">
+          <div class="mdot" style="background:#a89068"></div>
+          <span style="font-size:7px;font-weight:600;color:#f5f0e8">App</span>
+        </div>
+        <div class="mcard" style="background:#1e1610;border:1px solid #2e2418">
+          <div><div class="mh" style="color:#f5f0e8">Заголовок</div><div class="msub" style="color:#9a8870">Параграф текста</div></div>
+          <div class="mbtn" style="background:#a89068;color:#140e08">Кнопка</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Parchment</div>
+      <div class="td">Бежевый · земляной акцент</div>
+      <div class="hhr">Happyhues #11</div>
+      <div class="sw">
+        <span style="background:#f9f4ef;border:1px solid #e4d8c8"></span>
+        <span style="background:#8c7851"></span>
+        <span style="background:#020826"></span>
+        <span style="background:#1e1610"></span>
+        <span style="background:#a89068"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Blossom (hh#15: #faeee7, warm peach, pink btn) -->
+  <div class="tc selected" data-choice="blossom" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#faeee7">
+        <div class="mlabel" style="color:#33272a">☀ Light</div>
+        <div class="mnav" style="background:#fff5ef;border:1px solid #f0d0c4">
+          <div class="mdot" style="background:#c45a74"></div>
+          <span style="font-size:7px;font-weight:600;color:#33272a">App</span>
+        </div>
+        <div class="mcard" style="background:#fff5ef;border:1px solid #f0d0c4">
+          <div><div class="mh" style="color:#33272a">Заголовок</div><div class="msub" style="color:#594a4e">Параграф текста</div></div>
+          <div class="mbtn" style="background:#c45a74;color:#ffffff">Кнопка</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#1a1214">
+        <div class="mlabel" style="color:#aa8890">🌙 Dark</div>
+        <div class="mnav" style="background:#281a1d;border:1px solid #3a2428">
+          <div class="mdot" style="background:#be6878"></div>
+          <span style="font-size:7px;font-weight:600;color:#faeee7">App</span>
+        </div>
+        <div class="mcard" style="background:#281a1d;border:1px solid #3a2428">
+          <div><div class="mh" style="color:#faeee7">Заголовок</div><div class="msub" style="color:#aa8890">Параграф текста</div></div>
+          <div class="mbtn" style="background:#be6878;color:#1a1214">Кнопка</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Blossom</div>
+      <div class="td">Персик · приглушённый розовый</div>
+      <div class="hhr">Happyhues #15</div>
+      <div class="sw">
+        <span style="background:#faeee7;border:1px solid #f0d0c4"></span>
+        <span style="background:#c45a74"></span>
+        <span style="background:#33272a"></span>
+        <span style="background:#281a1d"></span>
+        <span style="background:#be6878"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Sage (hh#5: #f2f7f5, dark green, amber) -->
+  <div class="tc selected" data-choice="sage" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#f2f7f5">
+        <div class="mlabel" style="color:#00473e">☀ Light</div>
+        <div class="mnav" style="background:#ffffff;border:1px solid #c8ddd6">
+          <div class="mdot" style="background:#d4921a"></div>
+          <span style="font-size:7px;font-weight:600;color:#00473e">App</span>
+        </div>
+        <div class="mcard" style="background:#ffffff;border:1px solid #c8ddd6">
+          <div><div class="mh" style="color:#00473e">Заголовок</div><div class="msub" style="color:#475d5b">Параграф текста</div></div>
+          <div class="mbtn" style="background:#d4921a;color:#ffffff">Кнопка</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#091612">
+        <div class="mlabel" style="color:#7aada0">🌙 Dark</div>
+        <div class="mnav" style="background:#0d1e19;border:1px solid #183028">
+          <div class="mdot" style="background:#c8881a"></div>
+          <span style="font-size:7px;font-weight:600;color:#e8f2ef">App</span>
+        </div>
+        <div class="mcard" style="background:#0d1e19;border:1px solid #183028">
+          <div><div class="mh" style="color:#e8f2ef">Заголовок</div><div class="msub" style="color:#7aada0">Параграф текста</div></div>
+          <div class="mbtn" style="background:#c8881a;color:#091612">Кнопка</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Sage</div>
+      <div class="td">Зелёный туман · янтарь</div>
+      <div class="hhr">Happyhues #5</div>
+      <div class="sw">
+        <span style="background:#f2f7f5;border:1px solid #c8ddd6"></span>
+        <span style="background:#d4921a"></span>
+        <span style="background:#00473e"></span>
+        <span style="background:#0d1e19"></span>
+        <span style="background:#c8881a"></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-title">Холодные / нейтральные</div>
+<div class="grid4">
+
+  <!-- 5. Linen (hh#8: #f8f5f2, warm off-white, teal) -->
+  <div class="tc selected" data-choice="linen" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#f8f5f2">
+        <div class="mlabel" style="color:#232323">☀ Light</div>
+        <div class="mnav" style="background:#ffffff;border:1px solid #e2dbd4">
+          <div class="mdot" style="background:#078080"></div>
+          <span style="font-size:7px;font-weight:600;color:#232323">App</span>
+        </div>
+        <div class="mcard" style="background:#ffffff;border:1px solid #e2dbd4">
+          <div><div class="mh" style="color:#232323">Заголовок</div><div class="msub" style="color:#6a6460">Параграф текста</div></div>
+          <div class="mbtn" style="background:#078080;color:#ffffff">Кнопка</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#1a1714">
+        <div class="mlabel" style="color:#989490">🌙 Dark</div>
+        <div class="mnav" style="background:#252220;border:1px solid #302c28">
+          <div class="mdot" style="background:#4aabab"></div>
+          <span style="font-size:7px;font-weight:600;color:#f2efec">App</span>
+        </div>
+        <div class="mcard" style="background:#252220;border:1px solid #302c28">
+          <div><div class="mh" style="color:#f2efec">Заголовок</div><div class="msub" style="color:#989490">Параграф текста</div></div>
+          <div class="mbtn" style="background:#4aabab;color:#1a1714">Кнопка</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Linen</div>
+      <div class="td">Слоновая кость · бирюза</div>
+      <div class="hhr">Happyhues #8</div>
+      <div class="sw">
+        <span style="background:#f8f5f2;border:1px solid #e2dbd4"></span>
+        <span style="background:#078080"></span>
+        <span style="background:#232323"></span>
+        <span style="background:#252220"></span>
+        <span style="background:#4aabab"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Sunray (hh#14: #fffffe bg, dark navy, yellow) -->
+  <div class="tc selected" data-choice="sunray" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#fffffe">
+        <div class="mlabel" style="color:#272343">☀ Light</div>
+        <div class="mnav" style="background:#f7f5e8;border:1px solid #e8e4c8">
+          <div class="mdot" style="background:#b89600"></div>
+          <span style="font-size:7px;font-weight:600;color:#272343">App</span>
+        </div>
+        <div class="mcard" style="background:#f7f5e8;border:1px solid #e8e4c8">
+          <div><div class="mh" style="color:#272343">Заголовок</div><div class="msub" style="color:#4a4f6a">Параграф текста</div></div>
+          <div class="mbtn" style="background:#272343;color:#ffd803">Кнопка</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#14122a">
+        <div class="mlabel" style="color:#8a8caa">🌙 Dark</div>
+        <div class="mnav" style="background:#1e1c3a;border:1px solid #28264a">
+          <div class="mdot" style="background:#c8aa20"></div>
+          <span style="font-size:7px;font-weight:600;color:#f2f0ff">App</span>
+        </div>
+        <div class="mcard" style="background:#1e1c3a;border:1px solid #28264a">
+          <div><div class="mh" style="color:#f2f0ff">Заголовок</div><div class="msub" style="color:#8a8caa">Параграф текста</div></div>
+          <div class="mbtn" style="background:#c8aa20;color:#14122a">Кнопка</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Sunray</div>
+      <div class="td">Белый · тёмно-синий · золото</div>
+      <div class="hhr">Happyhues #14</div>
+      <div class="sw">
+        <span style="background:#fffffe;border:1px solid #e8e4c8"></span>
+        <span style="background:#b89600"></span>
+        <span style="background:#272343"></span>
+        <span style="background:#1e1c3a"></span>
+        <span style="background:#c8aa20"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Dusk (hh#12: #232946, navy, muted pink) -->
+  <div class="tc selected" data-choice="dusk" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#e8ebf7">
+        <div class="mlabel" style="color:#232946">☀ Light</div>
+        <div class="mnav" style="background:#ffffff;border:1px solid #c4c8e8">
+          <div class="mdot" style="background:#8a6875"></div>
+          <span style="font-size:7px;font-weight:600;color:#232946">App</span>
+        </div>
+        <div class="mcard" style="background:#ffffff;border:1px solid #c4c8e8">
+          <div><div class="mh" style="color:#232946">Заголовок</div><div class="msub" style="color:#5a5e80">Параграф текста</div></div>
+          <div class="mbtn" style="background:#232946;color:#eebbc3">Кнопка</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#141730">
+        <div class="mlabel" style="color:#8a8eb8">🌙 Dark</div>
+        <div class="mnav" style="background:#1e2244;border:1px solid #2a2e54">
+          <div class="mdot" style="background:#b09aaa"></div>
+          <span style="font-size:7px;font-weight:600;color:#eeedf5">App</span>
+        </div>
+        <div class="mcard" style="background:#1e2244;border:1px solid #2a2e54">
+          <div><div class="mh" style="color:#eeedf5">Заголовок</div><div class="msub" style="color:#8a8eb8">Параграф текста</div></div>
+          <div class="mbtn" style="background:#b09aaa;color:#141730">Кнопка</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Dusk</div>
+      <div class="td">Ночное небо · пыльная роза</div>
+      <div class="hhr">Happyhues #12</div>
+      <div class="sw">
+        <span style="background:#e8ebf7;border:1px solid #c4c8e8"></span>
+        <span style="background:#8a6875"></span>
+        <span style="background:#232946"></span>
+        <span style="background:#1e2244"></span>
+        <span style="background:#b09aaa"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Void (hh#4: #16161a, pure dark, purple) -->
+  <div class="tc selected" data-choice="void" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#f0eef9">
+        <div class="mlabel" style="color:#16161a">☀ Light</div>
+        <div class="mnav" style="background:#ffffff;border:1px solid #d4d0ec">
+          <div class="mdot" style="background:#6b47d4"></div>
+          <span style="font-size:7px;font-weight:600;color:#16161a">App</span>
+        </div>
+        <div class="mcard" style="background:#ffffff;border:1px solid #d4d0ec">
+          <div><div class="mh" style="color:#16161a">Заголовок</div><div class="msub" style="color:#505060">Параграф текста</div></div>
+          <div class="mbtn" style="background:#6b47d4;color:#ffffff">Кнопка</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#16161a">
+        <div class="mlabel" style="color:#7a7a90">🌙 Dark</div>
+        <div class="mnav" style="background:#242430;border:1px solid #302e44">
+          <div class="mdot" style="background:#9070cc"></div>
+          <span style="font-size:7px;font-weight:600;color:#eeecf8">App</span>
+        </div>
+        <div class="mcard" style="background:#242430;border:1px solid #302e44">
+          <div><div class="mh" style="color:#eeecf8">Заголовок</div><div class="msub" style="color:#7a7a90">Параграф текста</div></div>
+          <div class="mbtn" style="background:#9070cc;color:#16161a">Кнопка</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Void</div>
+      <div class="td">Почти чёрный · мягкий фиолет</div>
+      <div class="hhr">Happyhues #4</div>
+      <div class="sw">
+        <span style="background:#f0eef9;border:1px solid #d4d0ec"></span>
+        <span style="background:#6b47d4"></span>
+        <span style="background:#16161a"></span>
+        <span style="background:#242430"></span>
+        <span style="background:#9070cc"></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<hr class="sep">
+
+<h3 style="margin-bottom:6px">Скругления</h3>
+<p class="subtitle" style="margin-bottom:16px">Три пресета для оси <code>radius</code>. Применяются ко всем компонентам.</p>
+
+<div class="radius-row">
+
+  <!-- Sharp -->
+  <div class="rc" data-choice="sharp" onclick="toggleSelect(this)">
+    <div class="rpreview">
+      <button class="rbtn" style="border-radius:2px">Кнопка</button>
+      <span class="rtag" style="border-radius:2px">Badge</span>
+      <input class="rinput" style="border-radius:2px" placeholder="Поле">
+    </div>
+    <div class="rn">Sharp</div>
+    <div class="rd">Острые углы — строгий, технический стиль</div>
+    <div class="rv">0 / 1 / 2 / 4 / 6 / 9999px</div>
+  </div>
+
+  <!-- Soft -->
+  <div class="rc selected" data-choice="soft-radius" onclick="toggleSelect(this)">
+    <div class="rpreview">
+      <button class="rbtn" style="border-radius:8px">Кнопка</button>
+      <span class="rtag" style="border-radius:6px">Badge</span>
+      <input class="rinput" style="border-radius:8px" placeholder="Поле">
+    </div>
+    <div class="rn">Soft <span style="font-size:10px;color:#3b82f6;font-weight:400">— рекомендую</span></div>
+    <div class="rd">Мягкие углы — современный, нейтральный</div>
+    <div class="rv">4 / 6 / 8 / 12 / 16 / 9999px</div>
+  </div>
+
+  <!-- Round -->
+  <div class="rc" data-choice="round" onclick="toggleSelect(this)">
+    <div class="rpreview">
+      <button class="rbtn" style="border-radius:14px">Кнопка</button>
+      <span class="rtag" style="border-radius:10px">Badge</span>
+      <input class="rinput" style="border-radius:12px" placeholder="Поле">
+    </div>
+    <div class="rn">Round</div>
+    <div class="rd">Сильные скругления — дружелюбный, мягкий</div>
+    <div class="rv">8 / 12 / 16 / 20 / 28 / 9999px</div>
+  </div>
+
+</div>
+
+<hr class="sep">
+<p class="subtitle">Следующий шаг: типографика, отступы и тени — после твоего ответа здесь.</p>

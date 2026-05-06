@@ -1,0 +1,347 @@
+<style>
+* { box-sizing: border-box; }
+.grid5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 12px; }
+.tc { border-radius: 12px; overflow: hidden; cursor: pointer; border: 2px solid transparent; transition: border-color .15s, box-shadow .15s; box-shadow: 0 1px 4px rgba(0,0,0,.09); }
+.tc:hover { border-color: #94a3b8; }
+.tc.selected { border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,.13); }
+.ms { display: grid; grid-template-columns: 1fr 1fr; height: 88px; }
+.mp { padding: 7px 7px 5px; display: flex; flex-direction: column; }
+.mlabel { font-size: 6px; letter-spacing: .05em; text-transform: uppercase; opacity: .4; font-family: system-ui; margin-bottom: 3px; }
+.mnav { height: 16px; border-radius: 4px; margin-bottom: 5px; display: flex; align-items: center; gap: 3px; padding: 0 5px; flex-shrink: 0; }
+.mcard { border-radius: 5px; padding: 5px 6px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+.mdot { width: 4px; height: 4px; border-radius: 50%; flex-shrink: 0; }
+.mh { font-size: 7.5px; font-weight: 700; line-height: 1.2; }
+.msub { font-size: 6px; opacity: .55; }
+.mbtn { display: inline-flex; align-items: center; height: 13px; border-radius: 3px; padding: 0 5px; font-size: 6.5px; font-weight: 700; border: none; width: fit-content; }
+.ti { padding: 6px 9px 8px; border-top: 1px solid #f1f1f1; background: #fff; }
+.tn { font-weight: 700; font-size: 11.5px; color: #0f172a; }
+.td { font-size: 9.5px; color: #64748b; margin-top: 1px; line-height: 1.4; }
+.sw { display: flex; gap: 3px; margin-top: 5px; }
+.sw span { display: inline-block; width: 11px; height: 11px; border-radius: 50%; }
+.row-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #94a3b8; margin: 16px 0 8px; }
+
+/* radius section */
+.rrow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.rc { border-radius: 10px; padding: 12px 14px; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.07); border: 2px solid transparent; cursor: pointer; transition: border-color .15s; }
+.rc:hover { border-color: #94a3b8; }
+.rc.selected { border-color: #3b82f6; }
+.rpreview { display: flex; gap: 7px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
+.rbtn { height: 24px; padding: 0 12px; font-size: 10px; font-weight: 600; background: #3b82f6; color: #fff; border: none; cursor: default; }
+.rtag { height: 17px; padding: 0 8px; font-size: 9px; font-weight: 500; background: #eff6ff; color: #3b82f6; border: 1px solid #bfdbfe; cursor: default; display: inline-flex; align-items: center; }
+.rinput { height: 24px; padding: 0 8px; font-size: 10px; border: 1.5px solid #cbd5e1; background: #fff; width: 80px; outline: none; color: #374151; }
+.rn { font-weight: 700; font-size: 12px; color: #0f172a; }
+.rd { font-size: 10px; color: #64748b; margin-top: 1px; }
+.rv { font-size: 9.5px; color: #b0bac8; margin-top: 3px; font-family: monospace; }
+
+hr.sep { border: none; border-top: 1px solid #e8edf2; margin: 20px 0 16px; }
+.approve-note { padding: 12px 16px; background: #f0fdf4; border: 1px solid #86efac; border-radius: 10px; font-size: 12px; color: #166534; line-height: 1.6; margin-top: 16px; }
+</style>
+
+<h2>Финальное одобрение — 10 тем</h2>
+<p class="subtitle" style="margin-bottom:4px">После подтверждения: WebP-картинки для Telegram + спецификация для разработки.</p>
+<p class="subtitle" style="margin-bottom:18px">Все темы выбраны. Кликни, чтобы убрать ненужные.</p>
+
+<div class="row-label">Тёплые</div>
+<div class="grid5">
+
+  <!-- Soft -->
+  <div class="tc selected" data-choice="soft" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#faf7f4">
+        <div class="mlabel" style="color:#78716c">☀</div>
+        <div class="mnav" style="background:#fff;border:1px solid #e7e0d6"><div class="mdot" style="background:#d97706"></div><span style="font-size:6.5px;font-weight:600;color:#1c1917">App</span></div>
+        <div class="mcard" style="background:#fff;border:1px solid #e7e0d6">
+          <div><div class="mh" style="color:#1c1917">Заголовок</div><div class="msub" style="color:#78716c">Текст</div></div>
+          <div class="mbtn" style="background:#1c1917;color:#faf7f4">Btn</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#1c1917">
+        <div class="mlabel" style="color:#a8a29e">🌙</div>
+        <div class="mnav" style="background:#292524;border:1px solid #44403c"><div class="mdot" style="background:#b45309"></div><span style="font-size:6.5px;font-weight:600;color:#f5f0ea">App</span></div>
+        <div class="mcard" style="background:#292524;border:1px solid #44403c">
+          <div><div class="mh" style="color:#f5f0ea">Заголовок</div><div class="msub" style="color:#a8a29e">Текст</div></div>
+          <div class="mbtn" style="background:#b45309;color:#faf7f4">Btn</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Soft</div>
+      <div class="td">Крем · янтарь <span style="font-size:8.5px;color:#94a3b8">· claude.ai</span></div>
+      <div class="sw"><span style="background:#faf7f4;border:1px solid #e0d5c8"></span><span style="background:#d97706"></span><span style="background:#1c1917"></span><span style="background:#292524"></span><span style="background:#b45309"></span></div>
+    </div>
+  </div>
+
+  <!-- Parchment -->
+  <div class="tc selected" data-choice="parchment" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#f9f4ef">
+        <div class="mlabel" style="color:#716040">☀</div>
+        <div class="mnav" style="background:#fff;border:1px solid #e4d8c8"><div class="mdot" style="background:#8c7851"></div><span style="font-size:6.5px;font-weight:600;color:#020826">App</span></div>
+        <div class="mcard" style="background:#fff;border:1px solid #e4d8c8">
+          <div><div class="mh" style="color:#020826">Заголовок</div><div class="msub" style="color:#716040">Текст</div></div>
+          <div class="mbtn" style="background:#8c7851;color:#fff">Btn</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#140e08">
+        <div class="mlabel" style="color:#9a8870">🌙</div>
+        <div class="mnav" style="background:#1e1610;border:1px solid #2e2418"><div class="mdot" style="background:#a89068"></div><span style="font-size:6.5px;font-weight:600;color:#f5f0e8">App</span></div>
+        <div class="mcard" style="background:#1e1610;border:1px solid #2e2418">
+          <div><div class="mh" style="color:#f5f0e8">Заголовок</div><div class="msub" style="color:#9a8870">Текст</div></div>
+          <div class="mbtn" style="background:#a89068;color:#140e08">Btn</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Parchment</div>
+      <div class="td">Пергамент · земля</div>
+      <div class="sw"><span style="background:#f9f4ef;border:1px solid #e4d8c8"></span><span style="background:#8c7851"></span><span style="background:#020826"></span><span style="background:#1e1610"></span><span style="background:#a89068"></span></div>
+    </div>
+  </div>
+
+  <!-- Blossom -->
+  <div class="tc selected" data-choice="blossom" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#faeee7">
+        <div class="mlabel" style="color:#594a4e">☀</div>
+        <div class="mnav" style="background:#fff5ef;border:1px solid #f0d0c4"><div class="mdot" style="background:#c45a74"></div><span style="font-size:6.5px;font-weight:600;color:#33272a">App</span></div>
+        <div class="mcard" style="background:#fff5ef;border:1px solid #f0d0c4">
+          <div><div class="mh" style="color:#33272a">Заголовок</div><div class="msub" style="color:#594a4e">Текст</div></div>
+          <div class="mbtn" style="background:#c45a74;color:#fff">Btn</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#1a1214">
+        <div class="mlabel" style="color:#aa8890">🌙</div>
+        <div class="mnav" style="background:#281a1d;border:1px solid #3a2428"><div class="mdot" style="background:#be6878"></div><span style="font-size:6.5px;font-weight:600;color:#faeee7">App</span></div>
+        <div class="mcard" style="background:#281a1d;border:1px solid #3a2428">
+          <div><div class="mh" style="color:#faeee7">Заголовок</div><div class="msub" style="color:#aa8890">Текст</div></div>
+          <div class="mbtn" style="background:#be6878;color:#1a1214">Btn</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Blossom</div>
+      <div class="td">Персик · приглушённая роза</div>
+      <div class="sw"><span style="background:#faeee7;border:1px solid #f0d0c4"></span><span style="background:#c45a74"></span><span style="background:#33272a"></span><span style="background:#281a1d"></span><span style="background:#be6878"></span></div>
+    </div>
+  </div>
+
+  <!-- Sage — FIXED dark -->
+  <div class="tc selected" data-choice="sage" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#f2f7f5">
+        <div class="mlabel" style="color:#3a6a60">☀</div>
+        <div class="mnav" style="background:#edf7f2;border:1px solid #c0ddd2"><div class="mdot" style="background:#2a6a55"></div><span style="font-size:6.5px;font-weight:600;color:#00473e">App</span></div>
+        <div class="mcard" style="background:#edf7f2;border:1px solid #c0ddd2">
+          <div><div class="mh" style="color:#00473e">Заголовок</div><div class="msub" style="color:#3a6a60">Текст</div></div>
+          <div class="mbtn" style="background:#2a6a55;color:#edf7f2">Btn</div>
+        </div>
+      </div>
+      <!-- DARK = Option A: warm neutral -->
+      <div class="mp" style="background:#111210">
+        <div class="mlabel" style="color:#808880">🌙</div>
+        <div class="mnav" style="background:#1a1917;border:1px solid #272420"><div class="mdot" style="background:#5a8a6a"></div><span style="font-size:6.5px;font-weight:600;color:#e4e0d8">App</span></div>
+        <div class="mcard" style="background:#1a1917;border:1px solid #272420">
+          <div><div class="mh" style="color:#e4e0d8">Заголовок</div><div class="msub" style="color:#8a9288">Текст</div></div>
+          <div class="mbtn" style="background:#5a8a6a;color:#111210">Btn</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Sage <span style="font-size:8px;color:#16a34a;font-weight:400">✦ обновлён</span></div>
+      <div class="td">Зелёный туман · лесной акцент</div>
+      <div class="sw"><span style="background:#f2f7f5;border:1px solid #c0ddd2"></span><span style="background:#2a6a55"></span><span style="background:#00473e"></span><span style="background:#1a1917"></span><span style="background:#5a8a6a"></span></div>
+    </div>
+  </div>
+
+  <!-- Reverie -->
+  <div class="tc selected" data-choice="reverie" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#fef6e4">
+        <div class="mlabel" style="color:#2d3a70">☀</div>
+        <div class="mnav" style="background:#fff8ec;border:1px solid #f0d8a0"><div class="mdot" style="background:#d45a8a"></div><span style="font-size:6.5px;font-weight:600;color:#001858">App</span></div>
+        <div class="mcard" style="background:#fff8ec;border:1px solid #f0d8a0">
+          <div><div class="mh" style="color:#001858">Заголовок</div><div class="msub" style="color:#2d3a70">Текст</div></div>
+          <div class="mbtn" style="background:#d45a8a;color:#fef6e4">Btn</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#05081a">
+        <div class="mlabel" style="color:#8898cc">🌙</div>
+        <div class="mnav" style="background:#0c1030;border:1px solid #182040"><div class="mdot" style="background:#c0607a"></div><span style="font-size:6.5px;font-weight:600;color:#f0e8d0">App</span></div>
+        <div class="mcard" style="background:#0c1030;border:1px solid #182040">
+          <div><div class="mh" style="color:#f0e8d0">Заголовок</div><div class="msub" style="color:#8898cc">Текст</div></div>
+          <div class="mbtn" style="background:#c0607a;color:#05081a">Btn</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Reverie <span style="font-size:8px;color:#16a34a;font-weight:400">★ new</span></div>
+      <div class="td">Крем · флот · роза</div>
+      <div class="sw"><span style="background:#fef6e4;border:1px solid #f0d8a0"></span><span style="background:#d45a8a"></span><span style="background:#001858"></span><span style="background:#0c1030"></span><span style="background:#c0607a"></span></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="row-label">Холодные / нейтральные</div>
+<div class="grid5">
+
+  <!-- Linen -->
+  <div class="tc selected" data-choice="linen" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#f8f5f2">
+        <div class="mlabel" style="color:#6a6460">☀</div>
+        <div class="mnav" style="background:#fff;border:1px solid #e2dbd4"><div class="mdot" style="background:#078080"></div><span style="font-size:6.5px;font-weight:600;color:#232323">App</span></div>
+        <div class="mcard" style="background:#fff;border:1px solid #e2dbd4">
+          <div><div class="mh" style="color:#232323">Заголовок</div><div class="msub" style="color:#6a6460">Текст</div></div>
+          <div class="mbtn" style="background:#078080;color:#fff">Btn</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#1a1714">
+        <div class="mlabel" style="color:#989490">🌙</div>
+        <div class="mnav" style="background:#252220;border:1px solid #302c28"><div class="mdot" style="background:#4aabab"></div><span style="font-size:6.5px;font-weight:600;color:#f2efec">App</span></div>
+        <div class="mcard" style="background:#252220;border:1px solid #302c28">
+          <div><div class="mh" style="color:#f2efec">Заголовок</div><div class="msub" style="color:#989490">Текст</div></div>
+          <div class="mbtn" style="background:#4aabab;color:#1a1714">Btn</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Linen</div>
+      <div class="td">Слоновая кость · бирюза</div>
+      <div class="sw"><span style="background:#f8f5f2;border:1px solid #e2dbd4"></span><span style="background:#078080"></span><span style="background:#232323"></span><span style="background:#252220"></span><span style="background:#4aabab"></span></div>
+    </div>
+  </div>
+
+  <!-- Sunray -->
+  <div class="tc selected" data-choice="sunray" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#fffffe">
+        <div class="mlabel" style="color:#4a4f6a">☀</div>
+        <div class="mnav" style="background:#f5f2de;border:1px solid #e0dac0"><div class="mdot" style="background:#c4a800"></div><span style="font-size:6.5px;font-weight:600;color:#272343">App</span></div>
+        <div class="mcard" style="background:#f5f2de;border:1px solid #e0dac0">
+          <div><div class="mh" style="color:#272343">Заголовок</div><div class="msub" style="color:#4a4f6a">Текст</div></div>
+          <div class="mbtn" style="background:#c4a800;color:#1e1a2e">Btn</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#14122a">
+        <div class="mlabel" style="color:#8a8caa">🌙</div>
+        <div class="mnav" style="background:#1e1c3a;border:1px solid #2a2848"><div class="mdot" style="background:#c8aa20"></div><span style="font-size:6.5px;font-weight:600;color:#f0eeff">App</span></div>
+        <div class="mcard" style="background:#1e1c3a;border:1px solid #2a2848">
+          <div><div class="mh" style="color:#f0eeff">Заголовок</div><div class="msub" style="color:#8a8caa">Текст</div></div>
+          <div class="mbtn" style="background:#c8aa20;color:#14122a">Btn</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Sunray</div>
+      <div class="td">Крем · индиго · золото</div>
+      <div class="sw"><span style="background:#fffffe;border:1px solid #e0dac0"></span><span style="background:#c4a800"></span><span style="background:#272343"></span><span style="background:#1e1c3a"></span><span style="background:#c8aa20"></span></div>
+    </div>
+  </div>
+
+  <!-- Dusk -->
+  <div class="tc selected" data-choice="dusk" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#e8ebf7">
+        <div class="mlabel" style="color:#5a5e80">☀</div>
+        <div class="mnav" style="background:#fff;border:1px solid #c4c8e8"><div class="mdot" style="background:#8a6875"></div><span style="font-size:6.5px;font-weight:600;color:#232946">App</span></div>
+        <div class="mcard" style="background:#fff;border:1px solid #c4c8e8">
+          <div><div class="mh" style="color:#232946">Заголовок</div><div class="msub" style="color:#5a5e80">Текст</div></div>
+          <div class="mbtn" style="background:#232946;color:#eebbc3">Btn</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#141730">
+        <div class="mlabel" style="color:#8a8eb8">🌙</div>
+        <div class="mnav" style="background:#1e2244;border:1px solid #2a2e54"><div class="mdot" style="background:#b09aaa"></div><span style="font-size:6.5px;font-weight:600;color:#eeedf5">App</span></div>
+        <div class="mcard" style="background:#1e2244;border:1px solid #2a2e54">
+          <div><div class="mh" style="color:#eeedf5">Заголовок</div><div class="msub" style="color:#8a8eb8">Текст</div></div>
+          <div class="mbtn" style="background:#b09aaa;color:#141730">Btn</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Dusk</div>
+      <div class="td">Ночное небо · пыльная роза</div>
+      <div class="sw"><span style="background:#e8ebf7;border:1px solid #c4c8e8"></span><span style="background:#8a6875"></span><span style="background:#232946"></span><span style="background:#1e2244"></span><span style="background:#b09aaa"></span></div>
+    </div>
+  </div>
+
+  <!-- Void -->
+  <div class="tc selected" data-choice="void" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#f0eef9">
+        <div class="mlabel" style="color:#505060">☀</div>
+        <div class="mnav" style="background:#fff;border:1px solid #d4d0ec"><div class="mdot" style="background:#6b47d4"></div><span style="font-size:6.5px;font-weight:600;color:#16161a">App</span></div>
+        <div class="mcard" style="background:#fff;border:1px solid #d4d0ec">
+          <div><div class="mh" style="color:#16161a">Заголовок</div><div class="msub" style="color:#505060">Текст</div></div>
+          <div class="mbtn" style="background:#6b47d4;color:#fff">Btn</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#16161a">
+        <div class="mlabel" style="color:#7a7a90">🌙</div>
+        <div class="mnav" style="background:#242430;border:1px solid #302e44"><div class="mdot" style="background:#9070cc"></div><span style="font-size:6.5px;font-weight:600;color:#eeecf8">App</span></div>
+        <div class="mcard" style="background:#242430;border:1px solid #302e44">
+          <div><div class="mh" style="color:#eeecf8">Заголовок</div><div class="msub" style="color:#7a7a90">Текст</div></div>
+          <div class="mbtn" style="background:#9070cc;color:#16161a">Btn</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Void</div>
+      <div class="td">Почти чёрный · мягкий фиолет</div>
+      <div class="sw"><span style="background:#f0eef9;border:1px solid #d4d0ec"></span><span style="background:#6b47d4"></span><span style="background:#16161a"></span><span style="background:#242430"></span><span style="background:#9070cc"></span></div>
+    </div>
+  </div>
+
+  <!-- Coastal -->
+  <div class="tc selected" data-choice="coastal" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#fffffe">
+        <div class="mlabel" style="color:#5f6c7b">☀</div>
+        <div class="mnav" style="background:#f0f7ff;border:1px solid #c0d8f0"><div class="mdot" style="background:#3da9fc"></div><span style="font-size:6.5px;font-weight:600;color:#094067">App</span></div>
+        <div class="mcard" style="background:#f0f7ff;border:1px solid #c0d8f0">
+          <div><div class="mh" style="color:#094067">Заголовок</div><div class="msub" style="color:#5f6c7b">Текст</div></div>
+          <div class="mbtn" style="background:#3da9fc;color:#fff">Btn</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#06182a">
+        <div class="mlabel" style="color:#7aaac0">🌙</div>
+        <div class="mnav" style="background:#0a2840;border:1px solid #0f3550"><div class="mdot" style="background:#60b8e8"></div><span style="font-size:6.5px;font-weight:600;color:#e0f0ff">App</span></div>
+        <div class="mcard" style="background:#0a2840;border:1px solid #0f3550">
+          <div><div class="mh" style="color:#e0f0ff">Заголовок</div><div class="msub" style="color:#7aaac0">Текст</div></div>
+          <div class="mbtn" style="background:#60b8e8;color:#06182a">Btn</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Coastal <span style="font-size:8px;color:#16a34a;font-weight:400">★ new</span></div>
+      <div class="td">Чистый · небо · глубокий синий</div>
+      <div class="sw"><span style="background:#fffffe;border:1px solid #c0d8f0"></span><span style="background:#3da9fc"></span><span style="background:#094067"></span><span style="background:#0a2840"></span><span style="background:#60b8e8"></span></div>
+    </div>
+  </div>
+
+</div>
+
+<hr class="sep">
+
+<h3 style="margin-bottom:8px">Скругления</h3>
+<div class="rrow">
+  <div class="rc" data-choice="sharp" onclick="toggleSelect(this)">
+    <div class="rpreview"><button class="rbtn" style="border-radius:2px">Кнопка</button><span class="rtag" style="border-radius:2px">Badge</span><input class="rinput" style="border-radius:2px" placeholder="Input"></div>
+    <div class="rn">Sharp</div><div class="rd">Острые углы — технический стиль</div><div class="rv">0/1/2/4/6/9999px</div>
+  </div>
+  <div class="rc selected" data-choice="soft-r" onclick="toggleSelect(this)">
+    <div class="rpreview"><button class="rbtn" style="border-radius:8px">Кнопка</button><span class="rtag" style="border-radius:6px">Badge</span><input class="rinput" style="border-radius:8px" placeholder="Input"></div>
+    <div class="rn">Soft <span style="font-size:10px;color:#3b82f6;font-weight:400">рекомендую</span></div><div class="rd">Мягкие углы — современный</div><div class="rv">4/6/8/12/16/9999px</div>
+  </div>
+  <div class="rc" data-choice="round" onclick="toggleSelect(this)">
+    <div class="rpreview"><button class="rbtn" style="border-radius:14px">Кнопка</button><span class="rtag" style="border-radius:10px">Badge</span><input class="rinput" style="border-radius:12px" placeholder="Input"></div>
+    <div class="rn">Round</div><div class="rd">Сильные скругления — дружелюбный</div><div class="rv">8/12/16/20/28/9999px</div>
+  </div>
+</div>
+
+<div class="approve-note">
+  ✅ Все 10 тем показаны с финальными цветами. Sage dark обновлён на вариант A.<br>
+  Остальные оси (spacing, typography, elevation, icons) берём из существующей спецификации без изменений.<br>
+  <strong>После твоего «ок» — создаю WebP для Telegram и пишу дизайн-спецификацию.</strong>
+</div>

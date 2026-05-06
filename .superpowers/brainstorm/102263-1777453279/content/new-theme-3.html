@@ -1,0 +1,170 @@
+<style>
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.tc { border-radius: 12px; overflow: hidden; cursor: pointer; border: 2.5px solid transparent; transition: border-color .15s, box-shadow .15s; background: #fff; box-shadow: 0 1px 5px rgba(0,0,0,.09); }
+.tc:hover { border-color: #94a3b8; }
+.tc.selected { border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,.14); }
+.ms { display: grid; grid-template-columns: 1fr 1fr; height: 120px; }
+.mp { padding: 9px 9px 6px; display: flex; flex-direction: column; }
+.mlabel { font-size: 6px; letter-spacing: .06em; text-transform: uppercase; opacity: .35; margin-bottom: 4px; font-family: system-ui; }
+.mnav { height: 19px; border-radius: 4px; margin-bottom: 6px; display: flex; align-items: center; gap: 3px; padding: 0 7px; flex-shrink: 0; }
+.mcard { border-radius: 6px; padding: 7px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+.mdot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+.mh { font-size: 9px; font-weight: 700; }
+.msub { font-size: 7px; opacity: .55; margin-top: 1px; }
+.mbtn { display: inline-flex; align-items: center; height: 15px; border-radius: 3px; padding: 0 8px; font-size: 7.5px; font-weight: 700; border: none; width: fit-content; }
+.ti { padding: 9px 12px 11px; border-top: 1px solid #f0f0f0; }
+.tn { font-weight: 700; font-size: 13px; color: #0f172a; }
+.td { font-size: 10.5px; color: #64748b; margin-top: 2px; line-height: 1.45; }
+.src { font-size: 9px; color: #b0bac8; margin-top: 1px; }
+.sw { display: flex; gap: 3px; margin-top: 6px; }
+.sw span { display: inline-block; width: 14px; height: 14px; border-radius: 50%; }
+.hint-box { margin-top: 20px; padding: 14px 18px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 12px; color: #475569; line-height: 1.6; }
+.hint-box strong { color: #0f172a; }
+</style>
+
+<h2>Ещё 4 варианта</h2>
+<p class="subtitle" style="margin-bottom: 20px">Другие направления — оливковый, тёплый нейтральный, ржавчина, глубокая роза.</p>
+
+<div class="grid2">
+
+  <!-- Fern: тёплый оливково-зелёный -->
+  <div class="tc" data-choice="fern" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#f4f8ee">
+        <div class="mlabel" style="color:#1a2808">☀ Light</div>
+        <div class="mnav" style="background:#fafcf6;border:1px solid #c8e0a8"><div class="mdot" style="background:#5a8820"></div><span style="font-size:7px;font-weight:600;color:#1a2808">App</span></div>
+        <div class="mcard" style="background:#fafcf6;border:1px solid #c8e0a8">
+          <div><div class="mh" style="color:#1a2808">Заголовок</div><div class="msub" style="color:#4a6028">Текст</div></div>
+          <div class="mbtn" style="background:#5a8820;color:#fafcf6">Кнопка</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#101c08">
+        <div class="mlabel" style="color:#7a9848">🌙 Dark</div>
+        <div class="mnav" style="background:#182810;border:1px solid #1e3010"><div class="mdot" style="background:#7aaa30"></div><span style="font-size:7px;font-weight:600;color:#e8f8d0">App</span></div>
+        <div class="mcard" style="background:#182810;border:1px solid #1e3010">
+          <div><div class="mh" style="color:#e8f8d0">Заголовок</div><div class="msub" style="color:#7a9848">Текст</div></div>
+          <div class="mbtn" style="background:#7aaa30;color:#101c08">Кнопка</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Fern</div>
+      <div class="td">Тёплый оливково-зелёный. Ярче и желтее Sage, напоминает летний сад.</div>
+      <div class="src">Оттенок оливы / жёлто-зелёный</div>
+      <div class="sw">
+        <span style="background:#f4f8ee;border:1px solid #c8e0a8"></span>
+        <span style="background:#5a8820"></span>
+        <span style="background:#1a2808"></span>
+        <span style="background:#182810"></span>
+        <span style="background:#7aaa30"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pearl: нейтральный тёплый + приглушённая лаванда -->
+  <div class="tc" data-choice="pearl" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#f8f7f5">
+        <div class="mlabel" style="color:#1c1a18">☀ Light</div>
+        <div class="mnav" style="background:#ffffff;border:1px solid #e4e0dc"><div class="mdot" style="background:#9878a8"></div><span style="font-size:7px;font-weight:600;color:#1c1a18">App</span></div>
+        <div class="mcard" style="background:#ffffff;border:1px solid #e4e0dc">
+          <div><div class="mh" style="color:#1c1a18">Заголовок</div><div class="msub" style="color:#6a6460">Текст</div></div>
+          <div class="mbtn" style="background:#9878a8;color:#fff">Кнопка</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#18161a">
+        <div class="mlabel" style="color:#8a8490">🌙 Dark</div>
+        <div class="mnav" style="background:#242028;border:1px solid #302c38"><div class="mdot" style="background:#b090c0"></div><span style="font-size:7px;font-weight:600;color:#f4f2f0">App</span></div>
+        <div class="mcard" style="background:#242028;border:1px solid #302c38">
+          <div><div class="mh" style="color:#f4f2f0">Заголовок</div><div class="msub" style="color:#8a8490">Текст</div></div>
+          <div class="mbtn" style="background:#b090c0;color:#18161a">Кнопка</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Pearl</div>
+      <div class="td">Почти нейтральный тёплый серый + единственный тихий лавандовый акцент. Элегантно, без лишнего шума.</div>
+      <div class="src">Нейтральный / лаванда</div>
+      <div class="sw">
+        <span style="background:#f8f7f5;border:1px solid #e4e0dc"></span>
+        <span style="background:#9878a8"></span>
+        <span style="background:#1c1a18"></span>
+        <span style="background:#242028"></span>
+        <span style="background:#b090c0"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rust: ржавчина / выжженный оранж -->
+  <div class="tc" data-choice="rust" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#faf2ec">
+        <div class="mlabel" style="color:#2a1810">☀ Light</div>
+        <div class="mnav" style="background:#ffffff;border:1px solid #e8c8b0"><div class="mdot" style="background:#b84820"></div><span style="font-size:7px;font-weight:600;color:#2a1810">App</span></div>
+        <div class="mcard" style="background:#ffffff;border:1px solid #e8c8b0">
+          <div><div class="mh" style="color:#2a1810">Заголовок</div><div class="msub" style="color:#6a4830">Текст</div></div>
+          <div class="mbtn" style="background:#b84820;color:#fff">Кнопка</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#2a1810">
+        <div class="mlabel" style="color:#c09070">🌙 Dark</div>
+        <div class="mnav" style="background:#3a2218;border:1px solid #482a1e"><div class="mdot" style="background:#e06030"></div><span style="font-size:7px;font-weight:600;color:#f8ece0">App</span></div>
+        <div class="mcard" style="background:#3a2218;border:1px solid #482a1e">
+          <div><div class="mh" style="color:#f8ece0">Заголовок</div><div class="msub" style="color:#c09070">Текст</div></div>
+          <div class="mbtn" style="background:#e06030;color:#2a1810">Кнопка</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Rust</div>
+      <div class="td">Тёплая ржавчина / выжженный оранж. Теплее и насыщеннее Parchment, темнее Soft. Autumn-feel.</div>
+      <div class="src">Тёплая ржавчина</div>
+      <div class="sw">
+        <span style="background:#faf2ec;border:1px solid #e8c8b0"></span>
+        <span style="background:#b84820"></span>
+        <span style="background:#2a1810"></span>
+        <span style="background:#3a2218"></span>
+        <span style="background:#e06030"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rosewood: глубокая пыльная роза -->
+  <div class="tc" data-choice="rosewood" onclick="toggleSelect(this)">
+    <div class="ms">
+      <div class="mp" style="background:#fdf4f6">
+        <div class="mlabel" style="color:#2a1520">☀ Light</div>
+        <div class="mnav" style="background:#ffffff;border:1px solid #f0c8d4"><div class="mdot" style="background:#a03060"></div><span style="font-size:7px;font-weight:600;color:#2a1520">App</span></div>
+        <div class="mcard" style="background:#ffffff;border:1px solid #f0c8d4">
+          <div><div class="mh" style="color:#2a1520">Заголовок</div><div class="msub" style="color:#6a3850">Текст</div></div>
+          <div class="mbtn" style="background:#a03060;color:#fff">Кнопка</div>
+        </div>
+      </div>
+      <div class="mp" style="background:#1e0c16">
+        <div class="mlabel" style="color:#b87898">🌙 Dark</div>
+        <div class="mnav" style="background:#2e1422;border:1px solid #3c1a2c"><div class="mdot" style="background:#c84878"></div><span style="font-size:7px;font-weight:600;color:#f8e0ec">App</span></div>
+        <div class="mcard" style="background:#2e1422;border:1px solid #3c1a2c">
+          <div><div class="mh" style="color:#f8e0ec">Заголовок</div><div class="msub" style="color:#b87898">Текст</div></div>
+          <div class="mbtn" style="background:#c84878;color:#1e0c16">Кнопка</div>
+        </div>
+      </div>
+    </div>
+    <div class="ti">
+      <div class="tn">Rosewood</div>
+      <div class="td">Глубокая пыльная роза. Насыщеннее Blossom, темнее Reverie. Более театральный и взрослый характер.</div>
+      <div class="src">Глубокая роза / бургундский</div>
+      <div class="sw">
+        <span style="background:#fdf4f6;border:1px solid #f0c8d4"></span>
+        <span style="background:#a03060"></span>
+        <span style="background:#2a1520"></span>
+        <span style="background:#2e1422"></span>
+        <span style="background:#c84878"></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="hint-box">
+  <strong>Не нашёл нужную?</strong> Напиши в чате — например: «хочу что-то тёмное с фиолетовым», «нужен яркий жёлтый», «что-то похожее на Notion» — и я сделаю точно под запрос.
+</div>
