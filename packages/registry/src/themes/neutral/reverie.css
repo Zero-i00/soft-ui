@@ -1,51 +1,24 @@
 /* ═══════════════════════════════════════════════════
-   Neutral: reverie  (крем · флот · приглушённый розовый)
-   Surfaces, fills, text, borders, shadows.
+   Neutral: reverie  (крем · ночной индиго · пыльная роза)
    ═══════════════════════════════════════════════════ */
 
 :root {
 	color-scheme: light;
 
-	/* ── Surfaces ────────────────────────────────── */
-	--surface-body: #fef6e4;
-	--surface-card: #fff8ec;
-	--surface-popover: #fff8ec;
-	--surface-inset: #f5edda;
-	--surface-inverse: #05081a;
-	--surface-hover: color-mix(in srgb, var(--text-primary) 5%, var(--surface-body));
-	--surface-active: color-mix(in srgb, var(--text-primary) 10%, var(--surface-body));
-	--surface-selected: #d45a8a14;
-	--surface-disabled: #f5edda;
+	/* ── Neutral scale ─────────────────────────── */
 
-	/* ── Fills ───────────────────────────────────── */
-	--fill-soft: #f5edda;
-	--fill-soft-hover: color-mix(in srgb, var(--text-primary) 6%, var(--fill-soft));
-	--fill-strong: #f0d8a0;
-	--fill-strong-hover: color-mix(in srgb, var(--text-primary) 12%, var(--fill-strong));
-
-	/* ── Text ────────────────────────────────────── */
-	--text-primary: #001858;
-	--text-secondary: #2d3a70;
-	--text-disabled: #2d3a7080;
-	--text-inverse: #f0e8d0;
-	--text-link: #d45a8a;
-	--text-placeholder: #2d3a70;
-
-	/* ── Icons ───────────────────────────────────── */
-	--icon-default: #001858;
-	--icon-soft: #2d3a70;
-
-	/* ── Borders ─────────────────────────────────── */
-	--border-default: #f0d8a0;
-	--border-strong: color-mix(in srgb, var(--text-primary) 15%, var(--border-default));
-	--separator: #f0d8a080;
-
-	/* ── Neutral opacity ─────────────────────────── */
-	--neutral-opacity-lighter: #0018580a;
-	--neutral-opacity-light: #00185814;
-	--neutral-opacity-main: #0018581f;
-	--neutral-opacity-dark: #00185833;
-	--neutral-opacity-darker: #0018584d;
+	--color-neutral-0: #fef6e4;
+	--color-neutral-50: #fff8ec;
+	--color-neutral-100: #f5edda;
+	--color-neutral-200: #e9dcc1;
+	--color-neutral-300: #d5c6a8;
+	--color-neutral-400: #b8ab93;
+	--color-neutral-500: #9a8e7c;
+	--color-neutral-600: #756d76;
+	--color-neutral-700: #4e5578;
+	--color-neutral-800: #2d3a70;
+	--color-neutral-900: #001858;
+	--color-neutral-950: #000f38;
 
 	/* ── Overlay & Shadow ────────────────────────── */
 	--color-overlay: rgb(0 0 0 / 0.5);
@@ -59,46 +32,18 @@
 [data-theme="dark"] {
 	color-scheme: dark;
 
-	/* ── Surfaces ────────────────────────────────── */
-	--surface-body: #05081a;
-	--surface-card: #0c1030;
-	--surface-popover: #0c1030;
-	--surface-inset: #141838;
-	--surface-inverse: #fef6e4;
-	--surface-hover: color-mix(in srgb, var(--text-primary) 5%, var(--surface-body));
-	--surface-active: color-mix(in srgb, var(--text-primary) 10%, var(--surface-body));
-	--surface-selected: #c0607a14;
-	--surface-disabled: #141838;
-
-	/* ── Fills ───────────────────────────────────── */
-	--fill-soft: #141838;
-	--fill-soft-hover: color-mix(in srgb, var(--text-primary) 6%, var(--fill-soft));
-	--fill-strong: #182040;
-	--fill-strong-hover: color-mix(in srgb, var(--text-primary) 12%, var(--fill-strong));
-
-	/* ── Text ────────────────────────────────────── */
-	--text-primary: #f0e8d0;
-	--text-secondary: #8898cc;
-	--text-disabled: #8898cc80;
-	--text-inverse: #001858;
-	--text-link: #c0607a;
-	--text-placeholder: #8898cc;
-
-	/* ── Icons ───────────────────────────────────── */
-	--icon-default: #f0e8d0;
-	--icon-soft: #8898cc;
-
-	/* ── Borders ─────────────────────────────────── */
-	--border-default: #182040;
-	--border-strong: color-mix(in srgb, var(--text-primary) 15%, var(--border-default));
-	--separator: #18204080;
-
-	/* ── Neutral opacity ─────────────────────────── */
-	--neutral-opacity-lighter: #f0e8d00a;
-	--neutral-opacity-light: #f0e8d014;
-	--neutral-opacity-main: #f0e8d01f;
-	--neutral-opacity-dark: #f0e8d033;
-	--neutral-opacity-darker: #f0e8d04d;
+	--color-neutral-0: #05081a;
+	--color-neutral-50: #0c1030;
+	--color-neutral-100: #141838;
+	--color-neutral-200: #182040;
+	--color-neutral-300: #27325a;
+	--color-neutral-400: #465178;
+	--color-neutral-500: #65709a;
+	--color-neutral-600: #8898cc;
+	--color-neutral-700: #b2b8ca;
+	--color-neutral-800: #d7d0bc;
+	--color-neutral-900: #f0e8d0;
+	--color-neutral-950: #fef6e4;
 
 	/* ── Overlay & Shadow ────────────────────────── */
 	--color-overlay: rgb(0 0 0 / 0.65);
