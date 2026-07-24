@@ -6,7 +6,7 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "biome check app/",
+		"lint": "oxlint app",
 		"typecheck": "tsc --noEmit",
 		"clean": "rm -rf .next .turbo"
 	},

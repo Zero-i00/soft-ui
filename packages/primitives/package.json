@@ -21,7 +21,7 @@
 	"scripts": {
 		"build": "tsup",
 		"dev": "tsup --watch",
-		"lint": "biome check src/",
+		"lint": "oxlint src",
 		"typecheck": "tsc --noEmit",
 		"test": "vitest run",
 		"clean": "rm -rf dist .turbo"

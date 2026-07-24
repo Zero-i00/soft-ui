@@ -1,6 +1,6 @@
 name: Component request
 description: Request a new component to be added to the registry
-labels: ["type:component-request"]
+labels: ['type:component-request']
 body:
   - type: input
     id: name

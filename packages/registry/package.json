@@ -5,6 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"build": "tsx scripts/build-registry.ts",
+		"lint": "oxlint src",
 		"typecheck": "tsc --noEmit",
 		"test": "vitest run",
 		"test:watch": "vitest",

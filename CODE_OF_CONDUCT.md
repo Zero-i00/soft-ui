@@ -7,12 +7,14 @@ We are committed to making participation in this project a welcoming experience 
 ## Our Standards
 
 **Positive behaviour:**
+
 - Using welcoming and inclusive language
 - Being respectful of differing viewpoints
 - Gracefully accepting constructive criticism
 - Focusing on what is best for the community
 
 **Unacceptable behaviour:**
+
 - Insulting or derogatory comments
 - Public or private harassment
 - Publishing others' private information without permission

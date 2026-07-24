@@ -59,6 +59,7 @@ This repo uses [Conventional Commits](https://www.conventionalcommits.org/). Eve
 **Allowed scopes:** `primitives`, `cli`, `registry`, `book`
 
 Examples:
+
 ```
 feat(primitives): add FocusTrap primitive
 fix(primitives): restore focus on unmount in Safari

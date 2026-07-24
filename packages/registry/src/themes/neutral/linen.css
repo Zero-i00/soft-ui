@@ -30,7 +30,7 @@
 	--color-shadow-xl: rgb(0 0 0 / 0.3);
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
 	color-scheme: dark;
 
 	--color-neutral-0: #1a1714;
