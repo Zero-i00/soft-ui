@@ -1,0 +1,32 @@
+name: Component request
+description: Request a new component to be added to the registry
+labels: ["type:component-request"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Component name
+      placeholder: Combobox
+    validations:
+      required: true
+
+  - type: input
+    id: aria
+    attributes:
+      label: WAI-ARIA pattern
+      description: Link to the relevant ARIA Authoring Practices Guide pattern
+      placeholder: https://www.w3.org/WAI/ARIA/apg/patterns/combobox/
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case
+      description: Describe where and how you'd use this component
+    validations:
+      required: true
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples from other libraries
+      description: Links to similar implementations in shadcn, Radix, Headless UI, etc.

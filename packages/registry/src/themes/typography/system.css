@@ -1,0 +1,71 @@
+/* ═══════════════════════════════════════════════════
+   Typography: system
+   Системный шрифтовой стек — без внешних зависимостей.
+   ═══════════════════════════════════════════════════ */
+
+:root {
+	/* ── Font families ───────────────────────────── */
+	--typography-family-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+	--typography-family-mono: ui-monospace, "Fira Code", "Cascadia Code", monospace;
+	--typography-family-display: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+	/* ── H1 ──────────────────────────────────────── */
+	--typography-size-h1: 2.5rem;
+	--typography-height-h1: 1.2;
+	--typography-weight-h1: 800;
+
+	/* ── H2 ──────────────────────────────────────── */
+	--typography-size-h2: 2rem;
+	--typography-height-h2: 1.25;
+	--typography-weight-h2: 700;
+
+	/* ── H3 ──────────────────────────────────────── */
+	--typography-size-h3: 1.5rem;
+	--typography-height-h3: 1.3;
+	--typography-weight-h3: 700;
+
+	/* ── H4 ──────────────────────────────────────── */
+	--typography-size-h4: 1.25rem;
+	--typography-height-h4: 1.35;
+	--typography-weight-h4: 600;
+
+	/* ── H5 ──────────────────────────────────────── */
+	--typography-size-h5: 1.125rem;
+	--typography-height-h5: 1.4;
+	--typography-weight-h5: 600;
+
+	/* ── H6 ──────────────────────────────────────── */
+	--typography-size-h6: 1rem;
+	--typography-height-h6: 1.5;
+	--typography-weight-h6: 600;
+
+	/* ── Subtitle ────────────────────────────────── */
+	--typography-size-subtitle-1: 1rem;
+	--typography-height-subtitle-1: 1.5;
+	--typography-weight-subtitle-1: 500;
+
+	--typography-size-subtitle-2: 0.875rem;
+	--typography-height-subtitle-2: 1.5;
+	--typography-weight-subtitle-2: 500;
+
+	/* ── Body ────────────────────────────────────── */
+	--typography-size-body-1: 1rem;
+	--typography-height-body-1: 1.625;
+	--typography-weight-body-1: 400;
+
+	--typography-size-body-2: 0.875rem;
+	--typography-height-body-2: 1.571;
+	--typography-weight-body-2: 400;
+
+	/* ── Caption ─────────────────────────────────── */
+	--typography-size-caption: 0.75rem;
+	--typography-height-caption: 1.333;
+	--typography-weight-caption: 400;
+	--typography-letter-spacing-caption: 0.025em;
+
+	/* ── Overline ────────────────────────────────── */
+	--typography-size-overline: 0.625rem;
+	--typography-weight-overline: 600;
+	--typography-transform-overline: uppercase;
+	--typography-letter-spacing-overline: 0.08em;
+}

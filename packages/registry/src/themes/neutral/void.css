@@ -1,0 +1,55 @@
+/* ═══════════════════════════════════════════════════
+   Neutral: void  (почти чёрный · мягкий фиолет)
+   ═══════════════════════════════════════════════════ */
+
+:root {
+	color-scheme: light;
+
+	/* ── Neutral scale ─────────────────────────── */
+
+	--color-neutral-0: #f0eef9;
+	--color-neutral-50: #ebe8f7;
+	--color-neutral-100: #e4e2f4;
+	--color-neutral-200: #d4d0ec;
+	--color-neutral-300: #bcb8d8;
+	--color-neutral-400: #9f9ab8;
+	--color-neutral-500: #84809a;
+	--color-neutral-600: #68667b;
+	--color-neutral-700: #505060;
+	--color-neutral-800: #343442;
+	--color-neutral-900: #16161a;
+	--color-neutral-950: #0d0d10;
+
+	/* ── Overlay & Shadow ────────────────────────── */
+	--color-overlay: rgb(0 0 0 / 0.5);
+	--color-shadow-xs: rgb(0 0 0 / 0.04);
+	--color-shadow-sm: rgb(0 0 0 / 0.06);
+	--color-shadow-md: rgb(0 0 0 / 0.12);
+	--color-shadow-lg: rgb(0 0 0 / 0.2);
+	--color-shadow-xl: rgb(0 0 0 / 0.3);
+}
+
+[data-theme="dark"] {
+	color-scheme: dark;
+
+	--color-neutral-0: #16161a;
+	--color-neutral-50: #1d1d24;
+	--color-neutral-100: #242430;
+	--color-neutral-200: #302e44;
+	--color-neutral-300: #434059;
+	--color-neutral-400: #5b5873;
+	--color-neutral-500: #74708f;
+	--color-neutral-600: #8f8aa8;
+	--color-neutral-700: #aaa5c1;
+	--color-neutral-800: #c9c5db;
+	--color-neutral-900: #eeecf8;
+	--color-neutral-950: #f8f7fc;
+
+	/* ── Overlay & Shadow ────────────────────────── */
+	--color-overlay: rgb(0 0 0 / 0.65);
+	--color-shadow-xs: rgb(0 0 0 / 0.08);
+	--color-shadow-sm: rgb(0 0 0 / 0.14);
+	--color-shadow-md: rgb(0 0 0 / 0.25);
+	--color-shadow-lg: rgb(0 0 0 / 0.4);
+	--color-shadow-xl: rgb(0 0 0 / 0.55);
+}

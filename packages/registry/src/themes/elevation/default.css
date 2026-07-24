@@ -1,0 +1,14 @@
+/* ═══════════════════════════════════════════════════
+   Elevation: default — 6 уровней теней (box-shadow)
+   elevation-0: нет тени (базовый уровень)
+   elevation-5: максимальная тень (модальные окна)
+   ═══════════════════════════════════════════════════ */
+
+:root {
+	--elevation-0: none;
+	--elevation-1: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+	--elevation-2: 0 2px 4px -1px rgb(0 0 0 / 0.1);
+	--elevation-3: 0 4px 8px -2px rgb(0 0 0 / 0.12), 0 2px 4px -1px rgb(0 0 0 / 0.06);
+	--elevation-4: 0 8px 16px -4px rgb(0 0 0 / 0.15), 0 4px 8px -2px rgb(0 0 0 / 0.08);
+	--elevation-5: 0 20px 40px -8px rgb(0 0 0 / 0.2), 0 8px 16px -4px rgb(0 0 0 / 0.1);
+}

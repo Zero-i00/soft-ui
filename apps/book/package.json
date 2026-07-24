@@ -1,25 +1,25 @@
 {
-  "name": "@soft-stack/book",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "typecheck": "tsc --noEmit",
-    "clean": "rm -rf .next .turbo"
-  },
-  "dependencies": {
-    "@soft-stack/primitives": "workspace:*",
-    "next": "16.2.3",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
-  },
-  "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "typescript": "^5"
-  }
+	"name": "@soft-stack/book",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "biome check app/",
+		"typecheck": "tsc --noEmit",
+		"clean": "rm -rf .next .turbo"
+	},
+	"dependencies": {
+		"@soft-stack/primitives": "workspace:*",
+		"next": "16.2.3",
+		"react": "19.2.4",
+		"react-dom": "19.2.4"
+	},
+	"devDependencies": {
+		"@types/node": "^20",
+		"@types/react": "^19",
+		"@types/react-dom": "^19",
+		"typescript": "^5"
+	}
 }
