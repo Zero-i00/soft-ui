@@ -4,10 +4,10 @@
 
 Only the latest published version of each package is supported with security updates.
 
-| Package | Supported |
-|---|---|
-| `@soft-stack/primitives` | ✅ latest |
-| CLI | ✅ latest |
+| Package               | Supported |
+| --------------------- | --------- |
+| `@soft-ui/primitives` | ✅ latest |
+| CLI                   | ✅ latest |
 
 ## Reporting a Vulnerability
 
@@ -16,6 +16,7 @@ Only the latest published version of each package is supported with security upd
 Use [GitHub Security Advisories](https://github.com/Zero-i00/soft-stack-ui/security/advisories/new) to report privately. You can also email **clean.shiro@gmail.com** with the subject line `[SECURITY] soft-stack-ui`.
 
 Include:
+
 - Description of the vulnerability
 - Steps to reproduce
 - Potential impact

@@ -6,9 +6,9 @@
 
 :root {
 	/* ── Font families ───────────────────────────── */
-	--typography-family-sans: "Inter", system-ui, -apple-system, sans-serif;
-	--typography-family-mono: ui-monospace, "Fira Code", "Cascadia Code", monospace;
-	--typography-family-display: "Inter", system-ui, -apple-system, sans-serif;
+	--typography-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+	--typography-family-mono: ui-monospace, 'Fira Code', 'Cascadia Code', monospace;
+	--typography-family-display: 'Inter', system-ui, -apple-system, sans-serif;
 
 	/* ── H1 ──────────────────────────────────────── */
 	--typography-size-h1: 2.5rem;

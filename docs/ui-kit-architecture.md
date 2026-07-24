@@ -69,6 +69,7 @@ yourkit/
 ### Что публикуется в npm
 
 Только два пакета:
+
 - `@yourkit/cli` (или просто `yourkit`) — CLI
 - `@yourkit/primitives` — runtime-примитивы
 
@@ -90,21 +91,21 @@ yourkit/
 
 ```ts
 // packages/registry/src/components/button/meta.ts
-import type { ComponentMeta } from "../../types";
+import type { ComponentMeta } from '../../types'
 
 export const meta: ComponentMeta = {
-  name: "button",
-  type: "components:ui",
-  // npm-зависимости, которые CLI установит пользователю
-  dependencies: ["@yourkit/primitives"],
-  // другие компоненты из реестра, от которых этот зависит
-  registryDependencies: [],
-  // файлы, которые нужно скопировать в проект пользователя
-  files: [
-    { path: "button.tsx", target: "components/ui/button.tsx" },
-    { path: "button.module.css", target: "components/ui/button.module.css" },
-  ],
-};
+	name: 'button',
+	type: 'components:ui',
+	// npm-зависимости, которые CLI установит пользователю
+	dependencies: ['@yourkit/primitives'],
+	// другие компоненты из реестра, от которых этот зависит
+	registryDependencies: [],
+	// файлы, которые нужно скопировать в проект пользователя
+	files: [
+		{ path: 'button.tsx', target: 'components/ui/button.tsx' },
+		{ path: 'button.module.css', target: 'components/ui/button.module.css' }
+	]
+}
 ```
 
 ### Генерируемый JSON
@@ -113,22 +114,22 @@ export const meta: ComponentMeta = {
 
 ```json
 {
-  "name": "button",
-  "type": "components:ui",
-  "dependencies": ["@yourkit/primitives"],
-  "registryDependencies": [],
-  "files": [
-    {
-      "path": "button.tsx",
-      "target": "components/ui/button.tsx",
-      "content": "import styles from './button.module.css';\nimport { Slot } from '@yourkit/primitives';\n..."
-    },
-    {
-      "path": "button.module.css",
-      "target": "components/ui/button.module.css",
-      "content": ".root { background: var(--color-primary); ... }"
-    }
-  ]
+	"name": "button",
+	"type": "components:ui",
+	"dependencies": ["@yourkit/primitives"],
+	"registryDependencies": [],
+	"files": [
+		{
+			"path": "button.tsx",
+			"target": "components/ui/button.tsx",
+			"content": "import styles from './button.module.css';\nimport { Slot } from '@yourkit/primitives';\n..."
+		},
+		{
+			"path": "button.module.css",
+			"target": "components/ui/button.module.css",
+			"content": ".root { background: var(--color-primary); ... }"
+		}
+	]
 }
 ```
 
@@ -149,27 +150,27 @@ export const meta: ComponentMeta = {
 ```css
 /* packages/registry/src/themes/ocean.css */
 :root {
-  --color-bg: #ffffff;
-  --color-fg: #0a1628;
-  --color-primary: #0066cc;
-  --color-primary-fg: #ffffff;
-  --color-muted: #f0f4f8;
-  --color-border: #d0d9e2;
-  /* ... */
+	--color-bg: #ffffff;
+	--color-fg: #0a1628;
+	--color-primary: #0066cc;
+	--color-primary-fg: #ffffff;
+	--color-muted: #f0f4f8;
+	--color-border: #d0d9e2;
+	/* ... */
 
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --font-sans: system-ui, sans-serif;
+	--radius-sm: 4px;
+	--radius-md: 8px;
+	--font-sans: system-ui, sans-serif;
 }
 
-[data-theme="dark"] {
-  --color-bg: #0a1628;
-  --color-fg: #e6f0fa;
-  --color-primary: #4da3ff;
-  --color-primary-fg: #0a1628;
-  --color-muted: #162033;
-  --color-border: #2a3748;
-  /* ... */
+[data-theme='dark'] {
+	--color-bg: #0a1628;
+	--color-fg: #e6f0fa;
+	--color-primary: #4da3ff;
+	--color-primary-fg: #0a1628;
+	--color-muted: #162033;
+	--color-border: #2a3748;
+	/* ... */
 }
 ```
 
@@ -190,6 +191,7 @@ export const meta: ComponentMeta = {
 ### Команды
 
 **`npx yourkit init`** — запускается один раз в проекте. Интерактивно спрашивает:
+
 1. TypeScript или JavaScript?
 2. Куда складывать компоненты? (default: `components/ui`)
 3. Куда класть глобальный CSS с темой? (default: `app/globals.css` или `src/styles/theme.css`)
@@ -200,19 +202,19 @@ export const meta: ComponentMeta = {
 
 ```json
 {
-  "$schema": "https://yourkit.dev/schema.json",
-  "style": "default",
-  "palette": "ocean",
-  "tsx": true,
-  "aliases": {
-    "components": "@/components",
-    "ui": "@/components/ui",
-    "utils": "@/lib/utils"
-  },
-  "theme": {
-    "file": "app/globals.css",
-    "darkMode": "data-attribute"
-  }
+	"$schema": "https://yourkit.dev/schema.json",
+	"style": "default",
+	"palette": "ocean",
+	"tsx": true,
+	"aliases": {
+		"components": "@/components",
+		"ui": "@/components/ui",
+		"utils": "@/lib/utils"
+	},
+	"theme": {
+		"file": "app/globals.css",
+		"darkMode": "data-attribute"
+	}
 }
 ```
 
@@ -317,8 +319,8 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm turbo run lint typecheck test build
-      - run: pnpm --filter registry build  # генерит registry JSON
-      - run: pnpm --filter www build       # проверяет, что docs собираются
+      - run: pnpm --filter registry build # генерит registry JSON
+      - run: pnpm --filter www build # проверяет, что docs собираются
 ```
 
 **`.github/workflows/release.yml`** — публикация на push в main:
@@ -335,7 +337,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-      id-token: write  # для npm provenance
+      id-token: write # для npm provenance
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v3
@@ -415,6 +417,7 @@ jobs:
 ## 8. Рекомендуемый roadmap
 
 **Неделя 1–2: фундамент**
+
 - Инициализация монорепо (pnpm + turbo)
 - Настройка tsconfig, eslint, prettier, vitest
 - Скелет `packages/primitives` с Slot, Portal, useControllableState
@@ -424,18 +427,21 @@ jobs:
 - Настройка docs-сайта (Next.js)
 
 **Неделя 3: CLI**
+
 - Команда `add` с резолвингом зависимостей
 - Детектор пакетного менеджера
 - Обработка конфликтов файлов
 - Тесты CLI (`vitest` + временные папки)
 
 **Неделя 4: GitHub + публикация**
+
 - Настройка Actions, Changesets
 - Первая публикация `@yourkit/primitives@0.1.0` и `yourkit@0.1.0` в npm
 - Деплой docs, проверка end-to-end: `npx yourkit init && npx yourkit add button` в чистом Next-проекте
 
 **Неделя 5+: компоненты**
 Порядок добавления (от простых к сложным):
+
 1. Button, Input, Label, Textarea, Badge, Avatar, Separator
 2. Checkbox, Switch, RadioGroup (уже нужна своя клавиатурная логика)
 3. Dialog, Popover, Tooltip (FocusTrap, DismissableLayer)
@@ -475,12 +481,12 @@ jobs:
 
 Тема — это не только цвет. Пользователь при `init` выбирает **несколько независимых осей**, каждая со своим набором пресетов:
 
-| Ось | Примеры пресетов | Управляет слотами |
-|---|---|---|
-| `palette` | neutral, ocean, forest, sunset | `--color-*` |
-| `radius` | sharp, soft, round | `--radius-xs`, `--radius-sm`, `--radius-md`, `--radius-lg`, `--radius-xl` |
-| `spacing` | compact, cozy, spacious | `--space-xs..xl` |
-| `icons` | small, medium, large | `--icon-xs..xl` |
+| Ось       | Примеры пресетов               | Управляет слотами                                                         |
+| --------- | ------------------------------ | ------------------------------------------------------------------------- |
+| `palette` | neutral, ocean, forest, sunset | `--color-*`                                                               |
+| `radius`  | sharp, soft, round             | `--radius-xs`, `--radius-sm`, `--radius-md`, `--radius-lg`, `--radius-xl` |
+| `spacing` | compact, cozy, spacious        | `--space-xs..xl`                                                          |
+| `icons`   | small, medium, large           | `--icon-xs..xl`                                                           |
 
 ### Главный принцип: слоты стабильны, значения — переменные
 
@@ -514,11 +520,11 @@ packages/registry/src/themes/
 
 ```css
 :root {
-  --radius-xs: 2px;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
+	--radius-xs: 2px;
+	--radius-sm: 4px;
+	--radius-md: 8px;
+	--radius-lg: 12px;
+	--radius-xl: 16px;
 }
 ```
 
@@ -528,22 +534,22 @@ packages/registry/src/themes/
 
 ```ts
 export const TOKEN_CONTRACT = {
-  palette: [
-    "--color-bg", "--color-fg", "--color-primary", "--color-primary-fg",
-    "--color-muted", "--color-muted-fg", "--color-border",
-    "--color-destructive", "--color-destructive-fg",
-    // ...
-  ],
-  radius: [
-    "--radius-xs", "--radius-sm", "--radius-md", "--radius-lg", "--radius-xl",
-  ],
-  spacing: [
-    "--space-xs", "--space-sm", "--space-md", "--space-lg", "--space-xl",
-  ],
-  icons: [
-    "--icon-xs", "--icon-sm", "--icon-md", "--icon-lg", "--icon-xl",
-  ],
-} as const;
+	palette: [
+		'--color-bg',
+		'--color-fg',
+		'--color-primary',
+		'--color-primary-fg',
+		'--color-muted',
+		'--color-muted-fg',
+		'--color-border',
+		'--color-destructive',
+		'--color-destructive-fg'
+		// ...
+	],
+	radius: ['--radius-xs', '--radius-sm', '--radius-md', '--radius-lg', '--radius-xl'],
+	spacing: ['--space-xs', '--space-sm', '--space-md', '--space-lg', '--space-xl'],
+	icons: ['--icon-xs', '--icon-sm', '--icon-md', '--icon-lg', '--icon-xl']
+} as const
 ```
 
 И CI-тест: для каждого файла в `themes/<axis>/*.css` распарсить CSS, проверить что ВСЕ переменные из `TOKEN_CONTRACT[axis]` присутствуют. Падает тест — падает PR. Это единственная защита от ситуации «добавил новый пресет, забыл одну переменную, пол-кита ломается у пользователей».
@@ -554,20 +560,43 @@ CLI не просто конкатенирует выбранные пресет
 
 ```css
 /* @yourkit:palette:ocean start */
-:root { --color-bg: #fff; --color-fg: #0a1628; /* ... */ }
-[data-theme="dark"] { --color-bg: #0a1628; /* ... */ }
+:root {
+	--color-bg: #fff;
+	--color-fg: #0a1628; /* ... */
+}
+[data-theme='dark'] {
+	--color-bg: #0a1628; /* ... */
+}
 /* @yourkit:palette:ocean end */
 
 /* @yourkit:radius:soft start */
-:root { --radius-xs: 2px; --radius-sm: 4px; --radius-md: 8px; --radius-lg: 12px; --radius-xl: 16px; }
+:root {
+	--radius-xs: 2px;
+	--radius-sm: 4px;
+	--radius-md: 8px;
+	--radius-lg: 12px;
+	--radius-xl: 16px;
+}
 /* @yourkit:radius:soft end */
 
 /* @yourkit:spacing:cozy start */
-:root { --space-xs: 4px; --space-sm: 8px; --space-md: 12px; --space-lg: 20px; --space-xl: 32px; }
+:root {
+	--space-xs: 4px;
+	--space-sm: 8px;
+	--space-md: 12px;
+	--space-lg: 20px;
+	--space-xl: 32px;
+}
 /* @yourkit:spacing:cozy end */
 
 /* @yourkit:icons:medium start */
-:root { --icon-xs: 12px; --icon-sm: 14px; --icon-md: 16px; --icon-lg: 20px; --icon-xl: 24px; }
+:root {
+	--icon-xs: 12px;
+	--icon-sm: 14px;
+	--icon-md: 16px;
+	--icon-lg: 20px;
+	--icon-xl: 24px;
+}
 /* @yourkit:icons:medium end */
 ```
 
@@ -577,14 +606,14 @@ CLI не просто конкатенирует выбранные пресет
 
 ```json
 {
-  "theme": {
-    "file": "app/globals.css",
-    "palette": "ocean",
-    "radius": "soft",
-    "spacing": "cozy",
-    "icons": "medium",
-    "darkMode": "data-attribute"
-  }
+	"theme": {
+		"file": "app/globals.css",
+		"palette": "ocean",
+		"radius": "soft",
+		"spacing": "cozy",
+		"icons": "medium",
+		"darkMode": "data-attribute"
+	}
 }
 ```
 
@@ -601,6 +630,7 @@ npx yourkit theme set                    # интерактивный режим
 ```
 
 Алгоритм:
+
 1. Читает `yourkit.json`, находит `theme.file`.
 2. Для каждой указанной оси: скачивает `https://yourkit.dev/r/themes/<axis>/<preset>.json` (preset-файлы тоже живут в registry как отдельные «компоненты» — `type: "theme:preset"`).
 3. Ищет в `theme.file` секцию `/* @yourkit:<axis>:<old-preset> start */ ... end */`, вырезает её целиком.

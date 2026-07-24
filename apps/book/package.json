@@ -1,17 +1,17 @@
 {
-	"name": "@soft-stack/book",
+	"name": "@soft-ui/book",
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "biome check app/",
-		"typecheck": "tsc --noEmit",
+		"lint": "oxlint app",
+		"typecheck": "tsgo --noEmit",
 		"clean": "rm -rf .next .turbo"
 	},
 	"dependencies": {
-		"@soft-stack/primitives": "workspace:*",
+		"@soft-ui/primitives": "workspace:*",
 		"next": "16.2.3",
 		"react": "19.2.4",
 		"react-dom": "19.2.4"

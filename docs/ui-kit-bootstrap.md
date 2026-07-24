@@ -19,6 +19,7 @@ gh --version     # GitHub CLI — опционально, но сильно уп
 ```
 
 Если нет pnpm:
+
 ```bash
 npm install -g pnpm@latest
 # или через corepack (рекомендуется):
@@ -60,6 +61,7 @@ gh repo create yourkit \
 ### Сразу настрой базовые вещи в репозитории
 
 Через веб (`Settings` → ...):
+
 - **General** → Default branch: `main` → Pull Requests: включи только **Allow squash merging**, остальное выключи. Поставь галку «Automatically delete head branches».
 - **Branches** → Add branch protection rule для `main`:
   - Require a pull request before merging
@@ -135,31 +137,31 @@ prefer-workspace-packages=true
 
 ```json
 {
-  "name": "yourkit",
-  "private": true,
-  "version": "0.0.0",
-  "packageManager": "pnpm@9.12.0",
-  "engines": {
-    "node": ">=20"
-  },
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "typecheck": "turbo run typecheck",
-    "test": "turbo run test",
-    "clean": "turbo run clean && rm -rf node_modules",
-    "format": "prettier --write \"**/*.{ts,tsx,md,json,css}\"",
-    "changeset": "changeset",
-    "version-packages": "changeset version",
-    "release": "turbo run build && changeset publish"
-  },
-  "devDependencies": {
-    "@changesets/cli": "^2.27.0",
-    "prettier": "^3.3.0",
-    "turbo": "^2.1.0",
-    "typescript": "^5.6.0"
-  }
+	"name": "yourkit",
+	"private": true,
+	"version": "0.0.0",
+	"packageManager": "pnpm@9.12.0",
+	"engines": {
+		"node": ">=20"
+	},
+	"scripts": {
+		"build": "turbo run build",
+		"dev": "turbo run dev",
+		"lint": "turbo run lint",
+		"typecheck": "turbo run typecheck",
+		"test": "turbo run test",
+		"clean": "turbo run clean && rm -rf node_modules",
+		"format": "prettier --write \"**/*.{ts,tsx,md,json,css}\"",
+		"changeset": "changeset",
+		"version-packages": "changeset version",
+		"release": "turbo run build && changeset publish"
+	},
+	"devDependencies": {
+		"@changesets/cli": "^2.27.0",
+		"prettier": "^3.3.0",
+		"turbo": "^2.1.0",
+		"typescript": "^5.6.0"
+	}
 }
 ```
 
@@ -169,37 +171,37 @@ prefer-workspace-packages=true
 
 ```yaml
 packages:
-  - "apps/*"
-  - "packages/*"
+  - 'apps/*'
+  - 'packages/*'
 ```
 
 ### `turbo.json`
 
 ```json
 {
-  "$schema": "https://turbo.build/schema.json",
-  "ui": "tui",
-  "tasks": {
-    "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
-    },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "lint": {},
-    "typecheck": {
-      "dependsOn": ["^build"]
-    },
-    "test": {
-      "dependsOn": ["^build"],
-      "outputs": ["coverage/**"]
-    },
-    "clean": {
-      "cache": false
-    }
-  }
+	"$schema": "https://turbo.build/schema.json",
+	"ui": "tui",
+	"tasks": {
+		"build": {
+			"dependsOn": ["^build"],
+			"outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+		},
+		"dev": {
+			"cache": false,
+			"persistent": true
+		},
+		"lint": {},
+		"typecheck": {
+			"dependsOn": ["^build"]
+		},
+		"test": {
+			"dependsOn": ["^build"],
+			"outputs": ["coverage/**"]
+		},
+		"clean": {
+			"cache": false
+		}
+	}
 }
 ```
 
@@ -209,24 +211,24 @@ packages:
 
 ```json
 {
-  "compilerOptions": {
-    "target": "ES2022",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "jsx": "preserve",
-    "strict": true,
-    "noUncheckedIndexedAccess": true,
-    "noImplicitOverride": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "forceConsistentCasingInFileNames": true
-  }
+	"compilerOptions": {
+		"target": "ES2022",
+		"lib": ["ES2022", "DOM", "DOM.Iterable"],
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"jsx": "preserve",
+		"strict": true,
+		"noUncheckedIndexedAccess": true,
+		"noImplicitOverride": true,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
+		"forceConsistentCasingInFileNames": true
+	}
 }
 ```
 
@@ -234,11 +236,11 @@ packages:
 
 ```json
 {
-  "semi": true,
-  "singleQuote": false,
-  "trailingComma": "all",
-  "printWidth": 100,
-  "tabWidth": 2
+	"semi": true,
+	"singleQuote": false,
+	"trailingComma": "all",
+	"printWidth": 100,
+	"tabWidth": 2
 }
 ```
 
@@ -289,69 +291,69 @@ cd packages/primitives
 
 ```json
 {
-  "name": "@yourkit/primitives",
-  "version": "0.0.0",
-  "license": "MIT",
-  "sideEffects": false,
-  "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
-  },
-  "files": ["dist", "README.md"],
-  "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
-    "typecheck": "tsc --noEmit",
-    "clean": "rm -rf dist .turbo"
-  },
-  "peerDependencies": {
-    "react": ">=18",
-    "react-dom": ">=18"
-  },
-  "devDependencies": {
-    "@types/react": "^18.3.0",
-    "@types/react-dom": "^18.3.0",
-    "react": "^18.3.0",
-    "react-dom": "^18.3.0",
-    "tsup": "^8.3.0",
-    "typescript": "^5.6.0"
-  }
+	"name": "@yourkit/primitives",
+	"version": "0.0.0",
+	"license": "MIT",
+	"sideEffects": false,
+	"type": "module",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"files": ["dist", "README.md"],
+	"scripts": {
+		"build": "tsup",
+		"dev": "tsup --watch",
+		"typecheck": "tsc --noEmit",
+		"clean": "rm -rf dist .turbo"
+	},
+	"peerDependencies": {
+		"react": ">=18",
+		"react-dom": ">=18"
+	},
+	"devDependencies": {
+		"@types/react": "^18.3.0",
+		"@types/react-dom": "^18.3.0",
+		"react": "^18.3.0",
+		"react-dom": "^18.3.0",
+		"tsup": "^8.3.0",
+		"typescript": "^5.6.0"
+	}
 }
 ```
 
 ### `packages/primitives/tsup.config.ts`
 
 ```ts
-import { defineConfig } from "tsup";
+import { defineConfig } from 'tsup'
 
 export default defineConfig({
-  entry: ["src/index.ts"],
-  format: ["esm", "cjs"],
-  dts: true,
-  clean: true,
-  sourcemap: true,
-  treeshake: true,
-  external: ["react", "react-dom"],
-});
+	entry: ['src/index.ts'],
+	format: ['esm', 'cjs'],
+	dts: true,
+	clean: true,
+	sourcemap: true,
+	treeshake: true,
+	external: ['react', 'react-dom']
+})
 ```
 
 ### `packages/primitives/tsconfig.json`
 
 ```json
 {
-  "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "outDir": "dist",
-    "rootDir": "src"
-  },
-  "include": ["src"]
+	"extends": "../../tsconfig.base.json",
+	"compilerOptions": {
+		"outDir": "dist",
+		"rootDir": "src"
+	},
+	"include": ["src"]
 }
 ```
 
@@ -360,12 +362,13 @@ export default defineConfig({
 Заглушка, чтобы сборка прошла:
 
 ```ts
-export const version = "0.0.0";
+export const version = '0.0.0'
 ```
 
 Позже сюда добавятся реальные экспорты (`Slot`, `Portal`, `FocusTrap` и т.д.).
 
 Вернись в корень репозитория:
+
 ```bash
 cd ../..
 pnpm install
@@ -387,6 +390,7 @@ cd www
 ```
 
 Флаги важны:
+
 - `--no-tailwind` — мы используем чистый CSS + CSS Modules
 - `--app` — App Router (нужен для MDX и RSC)
 - `--no-eslint` — добавим общий eslint из корня позже
@@ -398,29 +402,29 @@ cd www
 
 ```json
 {
-  "name": "@yourkit/www",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "typecheck": "tsc --noEmit",
-    "clean": "rm -rf .next .turbo"
-  },
-  "dependencies": {
-    "@yourkit/primitives": "workspace:*",
-    "next": "^15.0.0",
-    "react": "^18.3.0",
-    "react-dom": "^18.3.0"
-  },
-  "devDependencies": {
-    "@types/node": "^20.14.0",
-    "@types/react": "^18.3.0",
-    "@types/react-dom": "^18.3.0",
-    "typescript": "^5.6.0"
-  }
+	"name": "@yourkit/www",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"typecheck": "tsc --noEmit",
+		"clean": "rm -rf .next .turbo"
+	},
+	"dependencies": {
+		"@yourkit/primitives": "workspace:*",
+		"next": "^15.0.0",
+		"react": "^18.3.0",
+		"react-dom": "^18.3.0"
+	},
+	"devDependencies": {
+		"@types/node": "^20.14.0",
+		"@types/react": "^18.3.0",
+		"@types/react-dom": "^18.3.0",
+		"typescript": "^5.6.0"
+	}
 }
 ```
 
@@ -454,10 +458,10 @@ pnpm dev
 Открой `http://localhost:3000` — должна быть дефолтная страница Next. Чтобы убедиться, что primitives подключены, в `apps/www/app/page.tsx` добавь:
 
 ```tsx
-import { version } from "@yourkit/primitives";
+import { version } from '@yourkit/primitives'
 
 export default function Home() {
-  return <main>Primitives version: {version}</main>;
+	return <main>Primitives version: {version}</main>
 }
 ```
 
@@ -475,15 +479,15 @@ pnpm dlx @changesets/cli init
 
 ```json
 {
-  "$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
-  "changelog": "@changesets/cli/changelog",
-  "commit": false,
-  "fixed": [],
-  "linked": [],
-  "access": "public",
-  "baseBranch": "main",
-  "updateInternalDependencies": "patch",
-  "ignore": ["@yourkit/www"]
+	"$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
+	"changelog": "@changesets/cli/changelog",
+	"commit": false,
+	"fixed": [],
+	"linked": [],
+	"access": "public",
+	"baseBranch": "main",
+	"updateInternalDependencies": "patch",
+	"ignore": ["@yourkit/www"]
 }
 ```
 
