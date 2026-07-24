@@ -71,7 +71,7 @@ The `commit-msg` git hook will reject messages that don't conform.
 
 ## Changesets
 
-If your change affects a published package (`@soft-stack/primitives` or the CLI), you must add a changeset:
+If your change affects a published package (`@soft-ui/primitives` or the CLI), you must add a changeset:
 
 ```bash
 pnpm changeset

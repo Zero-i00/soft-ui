@@ -1,4 +1,4 @@
-# @soft-stack/ui-kit
+# @soft-ui/ui-kit
 
 React UI kit with copy-paste components and themable design tokens.
 

@@ -7,5 +7,5 @@
 	"access": "public",
 	"baseBranch": "main",
 	"updateInternalDependencies": "patch",
-	"ignore": ["@soft-stack/book"]
+	"ignore": ["@soft-ui/book"]
 }

@@ -4,10 +4,10 @@
 
 Only the latest published version of each package is supported with security updates.
 
-| Package                  | Supported |
-| ------------------------ | --------- |
-| `@soft-stack/primitives` | ✅ latest |
-| CLI                      | ✅ latest |
+| Package               | Supported |
+| --------------------- | --------- |
+| `@soft-ui/primitives` | ✅ latest |
+| CLI                   | ✅ latest |
 
 ## Reporting a Vulnerability
 
