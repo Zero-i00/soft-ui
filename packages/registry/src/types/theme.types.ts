@@ -6,6 +6,3 @@ export interface ThemePresetEntry {
 	$schema: string
 	registryVersion: number
 }
-
-export type Theme = 'light' | 'dark' | 'system'
-export type ResolvedTheme = 'light' | 'dark'

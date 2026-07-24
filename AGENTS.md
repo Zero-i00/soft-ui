@@ -12,10 +12,25 @@ React UI kit with copy-paste component distribution. Public OSS (MIT)
 
 ## Monorepo structure
 
-- `packages/registry` — `@soft-ui/registry`, private. Tokens and contract, themes (10 palettes + paired neutrals, radius/spacing/icons/typography/elevation presets, `base.css`), theme runtime (`theme.service.ts`, `useTheme` hook, anti-FOUC `themeScript`), registry manifest types. Never published — source of truth for JSON generation.
+- `packages/registry` — `@soft-ui/registry`, private. Tokens and contract, themes (10 palettes + paired neutrals, radius/spacing/icons/typography/elevation presets, `base.css`), registry manifest types. Never published — source of truth for JSON generation. Data only, no runtime code.
 - `packages/primitives` — `@soft-ui/primitives`, published (esm+cjs+dts). Stub for now (`version`), primitives will live here.
-- `packages/hooks` — `@soft-ui/hooks`, published (esm+cjs+dts). Stub for now (`version`), hooks will live here.
+- `packages/hooks` — `@soft-ui/hooks`, published (esm+cjs+dts). Theme runtime lives here: `useTheme` hook, `themeService` singleton, anti-FOUC `themeScript`.
 - `apps/book` — Next.js 16 / React 19, docs/playground. Before working in it, read its `AGENTS.md` (Next 16 has breaking changes).
+
+## Hook development (`packages/hooks`)
+
+Hooks live in `packages/hooks/src/<use-name>/`, folder per hook. Files are named strictly kebab-case by the unit's own name (not `hook.*`, not PascalCase):
+
+```
+use-theme/
+  use-theme.ts           # the hook itself, 'use client' if it touches browser APIs
+  use-theme.service.ts   # non-React logic (class + singleton export) — only when needed
+  use-theme.types.ts     # hook-local types — only when needed
+  use-theme.test.tsx     # colocated tests, no central __tests__/
+  index.ts               # barrel: named exports only, no export default
+```
+
+Rules: `use` prefix always; re-export via the hook's `index.ts` → `src/index.ts`; package-wide constants in `src/constants.ts`; genuinely shared types only go central. Boundary: registry = data (tokens/presets/manifests), hooks = runtime — inline `themeScript` stays next to `use-theme.service.ts`, and a parity test guards the duplicated resolve logic in the script string.
 
 ## Toolchain
 
