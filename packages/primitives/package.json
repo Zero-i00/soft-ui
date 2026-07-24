@@ -22,7 +22,7 @@
 		"build": "tsup",
 		"dev": "tsup --watch",
 		"lint": "oxlint src",
-		"typecheck": "tsc --noEmit",
+		"typecheck": "tsgo --noEmit",
 		"test": "vitest run",
 		"clean": "rm -rf dist .turbo"
 	},

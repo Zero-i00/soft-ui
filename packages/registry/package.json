@@ -6,7 +6,7 @@
 	"scripts": {
 		"build": "tsx scripts/build-registry.ts",
 		"lint": "oxlint src",
-		"typecheck": "tsc --noEmit",
+		"typecheck": "tsgo --noEmit",
 		"test": "vitest run",
 		"test:watch": "vitest",
 		"clean": "rm -rf .turbo"
