@@ -32,3 +32,7 @@ coverage
 # local claude config
 .claude
 docs/superpowers
+
+# oh-my-claudecode
+.omc/
+**/.omc/
